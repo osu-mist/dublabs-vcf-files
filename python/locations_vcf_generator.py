@@ -46,15 +46,33 @@ def getLocations(url, access_token, params):
 	return json.loads(response)
 
 def getDiningSerialization(attrib):
-	print attrib
+	#print attrib
 	entry = vobject.vCard()
 	entry.add('n')
 	entry.n.value = attrib["name"]
 	print attrib["name"]
 	entry.add('fn')
 	entry.fn.value = attrib["name"]
+
+    # ADR;TYPE=WORK:;;;Corvallis;OR;97331;
+    # LABEL;TYPE=WORK:;;\nCorvallis, OR 97331
+    # GEO:44.564067;-123.274747
+    # PHOTO;VALUE=uri:
+    # NOTE:Kerr Administration Building
+    # CATEGORIES:Administration
+    # X-D-BLDG-ID:KAD
+    # X-D-BLDG-LOC:C
+    # ROLE:BUILDING
+
+	if "latitude" in attrib and "longitude" in attrib:
+		if attrib["latitude"] is not None and attrib["longitude"] is not None:
+			entry.add('geo')
+			entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
+    
+
+
 	entry.prettyPrint()
-	return entry.serialize()
+	#return entry.serialize()
 
 # Read configuration file in JSON format
 config_data_file = open('configuration.json')
@@ -77,12 +95,6 @@ dininglocs = open('dininglocations.vcf','w')
 for x in response["data"]:
 	print getDiningSerialization(x["attributes"])
 
-	#entry = vobject.vCard()
-	#entry.add('n')
-	#entry.n.value = attrib["name"]
-	#print attrib["name"]
-	#entry.add('fn')
-	#entry.fn.value = attrib["name"]
 	#print entry.serialize()
 	#entry.add('note')
 	#entry.note.value = attrib["summary"]
