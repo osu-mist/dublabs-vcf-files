@@ -5,54 +5,55 @@ import StringIO
 import vobject
 
 def getAccessToken(url, client_id, client_secret):
-	post_data = "client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type=client_credentials"
+    post_data = "client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type=client_credentials"
 
-	storage = StringIO.StringIO()
-	curl    = pycurl.Curl()
+    storage = StringIO.StringIO()
+    curl    = pycurl.Curl()
 
-	# Set options
-	curl.setopt(pycurl.URL, url)                     # CURLOPT_URL in PHP
-	curl.setopt(pycurl.POST, 1)                      # CURLOPT_POST in PHP
-	curl.setopt(pycurl.POSTFIELDS, post_data)        # CURLOPT_POSTFIELDS in PHP
-	curl.setopt(pycurl.WRITEFUNCTION, storage.write) # CURLOPT_RETURNTRANSFER in PHP
+    # Set options
+    curl.setopt(pycurl.URL, url)                     # CURLOPT_URL in PHP
+    curl.setopt(pycurl.POST, 1)                      # CURLOPT_POST in PHP
+    curl.setopt(pycurl.POSTFIELDS, post_data)        # CURLOPT_POSTFIELDS in PHP
+    curl.setopt(pycurl.WRITEFUNCTION, storage.write) # CURLOPT_RETURNTRANSFER in PHP
 
-	# Send the request and save response
-	curl.perform()
+    # Send the request and save response
+    curl.perform()
 
-	# Close request to clear up some resources
-	curl.close()
+    # Close request to clear up some resources
+    curl.close()
 
-	response = storage.getvalue()
-	return json.loads(response)
+    response = storage.getvalue()
+    return json.loads(response)
 
 
 def getLocations(url, access_token, params):
-	query_params = urllib.urlencode(params)
-	api_call_url = url + "?" + query_params;
-	headers      = ['Authorization: Bearer '+ access_token]
+    query_params = urllib.urlencode(params)
+    api_call_url = url + "?" + query_params;
+    headers      = ['Authorization: Bearer '+ access_token]
 
-	storage = StringIO.StringIO()
-	curl    = pycurl.Curl()
+    storage = StringIO.StringIO()
+    curl    = pycurl.Curl()
 
-	# Set options
-	curl.setopt(pycurl.URL, api_call_url)
-	curl.setopt(pycurl.HTTPHEADER, headers) # CURLOPT_HTTPHEADER in PHP
-	curl.setopt(pycurl.WRITEFUNCTION, storage.write)
+    # Set options
+    curl.setopt(pycurl.URL, api_call_url)
+    curl.setopt(pycurl.HTTPHEADER, headers) # CURLOPT_HTTPHEADER in PHP
+    curl.setopt(pycurl.WRITEFUNCTION, storage.write)
 
-	curl.perform()
-	curl.close()
+    curl.perform()
+    curl.close()
 
-	response = storage.getvalue()
-	return json.loads(response)
+    response = storage.getvalue()
+    return json.loads(response)
 
 def getDiningSerialization(attrib):
-	#print attrib
-	entry = vobject.vCard()
-	entry.add('n')
-	entry.n.value = attrib["name"]
-	print attrib["name"]
-	entry.add('fn')
-	entry.fn.value = attrib["name"]
+    #print attrib
+    #print attrib["name"]
+    entry = vobject.vCard()
+    entry.add('n')
+    entry.n.value = str(attrib["name"])
+
+    entry.add('fn')
+    entry.fn.value = str(attrib["name"])
 
     # ADR;TYPE=WORK:;;;Corvallis;OR;97331;
     # LABEL;TYPE=WORK:;;\nCorvallis, OR 97331
@@ -64,15 +65,16 @@ def getDiningSerialization(attrib):
     # X-D-BLDG-LOC:C
     # ROLE:BUILDING
 
-	if "latitude" in attrib and "longitude" in attrib:
-		if attrib["latitude"] is not None and attrib["longitude"] is not None:
-			entry.add('geo')
-			entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
-    
+    if "latitude" in attrib and "longitude" in attrib:
+        if attrib["latitude"] is not None and attrib["longitude"] is not None:
+            entry.add('geo')
+            entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
 
 
-	entry.prettyPrint()
-	#return entry.serialize()
+
+    #entry.prettyPrint()
+    return entry
+    #return entry.serialize()
 
 # Read configuration file in JSON format
 config_data_file = open('configuration.json')
@@ -93,18 +95,29 @@ response = getLocations(locations_url, access_token, params)
 dininglocs = open('dininglocations.vcf','w')
 
 for x in response["data"]:
-	print getDiningSerialization(x["attributes"])
+    theEntry = getDiningSerialization(x["attributes"])
+    #theEntry.prettyPrint()
 
-	#print entry.serialize()
-	#entry.add('note')
-	#entry.note.value = attrib["summary"]
+    #The serialization function will work on a second try for some reason
+    try:
+        vcard = theEntry.serialize()
+    except:
+        vcard = theEntry.serialize()
 
-	#if "latitude" in attrib and "longitude" in attrib:
-	#	if attrib["latitude"] is not None and attrib["longitude"] is not None:
-	#		entry.add('geo')
-	#		entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
+    print vcard
+    dininglocs.write(vcard)
+    #print theEntry.serialize()
+    #str = theEntry.serialize()
+    #print entry.serialize()
+    #entry.add('note')
+    #entry.note.value = attrib["summary"]
 
-	print "\n\n"
+    #if "latitude" in attrib and "longitude" in attrib:
+    #    if attrib["latitude"] is not None and attrib["longitude"] is not None:
+    #        entry.add('geo')
+    #        entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
+
+    print "\n\n"
 
 dininglocs.close()
 
