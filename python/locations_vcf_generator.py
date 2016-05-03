@@ -48,10 +48,10 @@ def getLocations(url, access_token, params):
 def getDiningSerialization(attrib):
     entry = vobject.vCard()
     entry.add('n')
-    entry.n.value = attrib["name"]
+    entry.n.value = str(attrib["name"])
 
     entry.add('fn')
-    entry.fn.value = attrib["name"]
+    entry.fn.value = str(attrib["name"])
 
     entry.add('X-D-BLDG-LOC')
     entry.x_d_bldg_loc.value = "C"
@@ -60,11 +60,11 @@ def getDiningSerialization(attrib):
     entry.role.value = "BUILDING"
 
     entry.add('note')
-    entry.note.value = attrib["summary"]
+    entry.note.value = str(attrib["summary"])
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
         entry.add("X-D-BLD-ID")
-        entry.x_d_bld_id.value = attrib["abbreviation"]
+        entry.x_d_bld_id.value = str(attrib["abbreviation"])
 
     if "latitude" in attrib and "longitude" in attrib:
         if attrib["latitude"] is not None and attrib["longitude"] is not None:
@@ -79,6 +79,14 @@ def writeVcardFile(filename, response):
     
     for x in response["data"]:
         entry = getDiningSerialization(x["attributes"])
+
+        try:
+            vcard = entry.serialize()
+        except:
+            vcard = entry.serialize()
+
+        #print vcard
+        vcfFile.write(vcard)
     
         #print entry.serialize()
         print "\n\n"
@@ -97,7 +105,6 @@ access_token_response = getAccessToken(access_token_url, config_data["client_id"
 access_token  = access_token_response["access_token"]
 locations_url = base_url + config_data["locations_endpoint"]
 params        = {"type": "dining"}
-
 
 # Process Dining Data
 response = getLocations(locations_url, access_token, params)
