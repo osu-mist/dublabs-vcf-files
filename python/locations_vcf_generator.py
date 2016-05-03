@@ -2,6 +2,7 @@ import json
 import pycurl
 import urllib
 import StringIO
+import string
 import vobject
 
 def getAccessToken(url, client_id, client_secret):
@@ -85,12 +86,18 @@ def writeVcardFile(filename, response):
         except:
             vcard = entry.serialize()
 
+        #it seems like the serializer is adding in the backslash.
+        lines = string.split(vcard, '\n')
+        for x in lines:
+            if "GEO" in x:
+                print x
+
         #print vcard
         vcfFile.write(vcard)
-    
+
         #print entry.serialize()
         print "\n\n"
-    
+
     vcfFile.close()
 
 # Read configuration file in JSON format
