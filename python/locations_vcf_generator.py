@@ -46,38 +46,33 @@ def getLocations(url, access_token, params):
     return json.loads(response)
 
 def getDiningSerialization(attrib):
-    #print attrib
     entry = vobject.vCard()
     entry.add('n')
     entry.n.value = attrib["name"]
-    print attrib["name"]
+
     entry.add('fn')
     entry.fn.value = attrib["name"]
 
-    # ADR;TYPE=WORK:;;;Corvallis;OR;97331;
-    # LABEL;TYPE=WORK:;;\nCorvallis, OR 97331
-    # GEO:44.564067;-123.274747
-    # PHOTO;VALUE=uri:
-    # X-D-BLDG-ID:KAD
-    # ROLE:BUILDING
-
     entry.add('X-D-BLDG-LOC')
     entry.x_d_bldg_loc.value = "C"
+
     entry.add('role')
-    entry.x_d_bldg_loc.value = "BUILDING"
+    entry.role.value = "BUILDING"
+
+    entry.add('note')
+    entry.note.value = attrib["summary"]
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
         entry.add("X-D-BLD-ID")
         entry.x_d_bld_id.value = attrib["abbreviation"]
+
     if "latitude" in attrib and "longitude" in attrib:
         if attrib["latitude"] is not None and attrib["longitude"] is not None:
             entry.add('geo')
             entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
     
-
-
     entry.prettyPrint()
-    #return entry.serialize()
+    return entry
 
 # Read configuration file in JSON format
 config_data_file = open('configuration.json')
@@ -98,17 +93,9 @@ response = getLocations(locations_url, access_token, params)
 dininglocs = open('dininglocations.vcf','w')
 
 for x in response["data"]:
-    print getDiningSerialization(x["attributes"])
+    entry = getDiningSerialization(x["attributes"])
 
     #print entry.serialize()
-    #entry.add('note')
-    #entry.note.value = attrib["summary"]
-
-    #if "latitude" in attrib and "longitude" in attrib:
-    #   if attrib["latitude"] is not None and attrib["longitude"] is not None:
-    #       entry.add('geo')
-    #       entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
-
     print "\n\n"
 
 dininglocs.close()
