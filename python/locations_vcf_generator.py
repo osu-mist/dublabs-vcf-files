@@ -74,6 +74,17 @@ def getDiningSerialization(attrib):
     entry.prettyPrint()
     return entry
 
+def writeVcardFile(filename, response):
+    vcfFile = open(filename,'w')
+    
+    for x in response["data"]:
+        entry = getDiningSerialization(x["attributes"])
+    
+        #print entry.serialize()
+        print "\n\n"
+    
+    vcfFile.close()
+
 # Read configuration file in JSON format
 config_data_file = open('configuration.json')
 config_data      = json.load(config_data_file)
@@ -87,19 +98,13 @@ access_token  = access_token_response["access_token"]
 locations_url = base_url + config_data["locations_endpoint"]
 params        = {"type": "dining"}
 
+
+# Process Dining Data
 response = getLocations(locations_url, access_token, params)
-#print "response: ", response
+writeVcardFile('dininglocations.vcf', response)
 
-dininglocs = open('dininglocations.vcf','w')
-
-for x in response["data"]:
-    entry = getDiningSerialization(x["attributes"])
-
-    #print entry.serialize()
-    print "\n\n"
-
-dininglocs.close()
-
-buildinglocs = open('buildings.vcf','w')
-params["type"] = "buildings"
+# Process Building Data
+params["type"] = "building"
+params["campus"] = "corvallis"
 response = getLocations(locations_url, access_token, params)
+writeVcardFile('buildings.vcf', response)
