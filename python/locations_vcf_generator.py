@@ -79,8 +79,8 @@ def getDiningSerialization(attrib):
     entry.add('role')
     entry.role.value = "BUILDING"
 
-    entry.add('note')
-    entry.note.value = str(attrib["summary"])
+    #entry.add('note')
+    #entry.note.value = str(attrib["summary"])
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
         entry.add("X-D-BLD-ID")
