@@ -5,6 +5,9 @@ import StringIO
 import string
 import vobject
 
+CAMPUS = "Oregon State - Corvallis"
+CAMPUS_LOC = "C"
+
 def getAccessToken(url, client_id, client_secret):
     post_data = "client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type=client_credentials"
 
@@ -46,13 +49,29 @@ def getLocations(url, access_token, params):
     response = storage.getvalue()
     return json.loads(response)
 
+def getCampus():
+    entry = vobject.vCard()
+    entry.add('n')
+    entry.n.value = CAMPUS
+
+    entry.add('fn')
+    entry.fn.value = CAMPUS
+
+    entry.add("X-D-LOC")
+    entry.x_d_loc.value = CAMPUS_LOC
+
+    entry.add('role')
+    entry.role.value = "CAMPUS"
+
+    return entry
+
 def getDiningSerialization(attrib):
     entry = vobject.vCard()
     entry.add('n')
-    entry.n.value = str(attrib["name"])
+    entry.n.value = attrib["name"]
 
     entry.add('fn')
-    entry.fn.value = str(attrib["name"])
+    entry.fn.value = attrib["name"]
 
     entry.add('X-D-BLDG-LOC')
     entry.x_d_bldg_loc.value = "C"
@@ -72,12 +91,20 @@ def getDiningSerialization(attrib):
             entry.add('geo')
             entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
     
-    entry.prettyPrint()
+    #entry.prettyPrint()
     return entry
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
     
+    entry = getCampus()
+    try:
+        vcard = entry.serialize()
+    except:
+        vcard = entry.serialize()
+
+    vcfFile.write(vcard)
+
     for x in response["data"]:
         entry = getDiningSerialization(x["attributes"])
 
