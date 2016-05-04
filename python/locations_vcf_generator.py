@@ -138,7 +138,7 @@ access_token_response = getAccessToken(access_token_url, config_data["client_id"
 
 access_token  = access_token_response["access_token"]
 locations_url = base_url + config_data["locations_endpoint"]
-params        = {"type": "dining", "page[size]":100}
+params        = {"type": "dining", "page[size]":200}
 
 # Process Dining Data
 response = getLocations(locations_url, access_token, params)
