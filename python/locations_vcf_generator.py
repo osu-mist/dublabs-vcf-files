@@ -1,3 +1,4 @@
+from HTMLParser import HTMLParser
 import json
 import pycurl
 import urllib
@@ -79,20 +80,47 @@ def getDiningSerialization(attrib):
     entry.add('role')
     entry.role.value = "BUILDING"
 
-    #entry.add('note')
-    #entry.note.value = str(attrib["summary"])
+    entry.add('categories')
+    entry.categories.value = ["Corvallis"]
+
+    entry.add('note')
+    entry.note.value = ""
+    if attrib["summary"] is not None:
+        entry.note.value = strip_tags(attrib["summary"]).encode('utf-8')
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
         entry.add("X-D-BLD-ID")
-        entry.x_d_bld_id.value = str(attrib["abbreviation"])
+        entry.x_d_bld_id.value = attrib["abbreviation"]
 
     if "latitude" in attrib and "longitude" in attrib:
         if attrib["latitude"] is not None and attrib["longitude"] is not None:
             entry.add('geo')
-            entry.geo.value = attrib["latitude"]+','+attrib["longitude"]
+            entry.geo.value = attrib["latitude"]+';'+attrib["longitude"]
+
+    if attrib["images"] and attrib["images"][0] is not None:
+        entry.add("PHOTO")
+        entry.photo.value_param = 'uri'
+        entry.photo.value = attrib["images"][0]
     
-    #entry.prettyPrint()
     return entry
+
+# SO: http://stackoverflow.com/questions/753052/strip-html-from-strings-in-python
+class MLStripper(HTMLParser):
+    def __init__(self):
+        self.reset()
+        self.fed = []
+
+    def handle_data(self, d):
+        self.fed.append(d)
+
+    def get_data(self):
+        return ''.join(self.fed)
+
+def strip_tags(html):
+    s = MLStripper()
+    s.feed(html)
+    return s.get_data()
+
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
@@ -113,17 +141,7 @@ def writeVcardFile(filename, response):
         except:
             vcard = entry.serialize()
 
-        #it seems like the serializer is adding in the backslash.
-        lines = string.split(vcard, '\n')
-        for x in lines:
-            if "GEO" in x:
-                print x
-
-        #print vcard
         vcfFile.write(vcard)
-
-        #print entry.serialize()
-        print "\n\n"
 
     vcfFile.close()
 
