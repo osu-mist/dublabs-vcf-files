@@ -74,6 +74,7 @@ def getDiningSerialization(attrib):
     entry.add('fn')
     entry.fn.value = attrib["name"]
 
+    #Field required by the mobile app for display and linking
     entry.add('X-D-BLDG-LOC')
     entry.x_d_bldg_loc.value = "C"
 
@@ -89,6 +90,7 @@ def getDiningSerialization(attrib):
         entry.note.value = strip_tags(attrib["summary"]).encode('utf-8')
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
+        #Field required by the mobile app for display and linking
         entry.add("X-D-BLD-ID")
         entry.x_d_bld_id.value = attrib["abbreviation"]
 
