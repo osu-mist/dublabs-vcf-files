@@ -3,10 +3,12 @@
 	"version": "v1",
 
 	"api": "/locations",
-	
+
 	"token_endpoint": "/token",
 	"locations_endpoint": "/",
 
 	"client_id": "secret",
-	"client_secret": "sauce"
+	"client_secret": "sauce",
+
+	"page_size": "200"
 }
