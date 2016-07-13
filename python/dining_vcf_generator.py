@@ -1,5 +1,6 @@
 from HTMLParser import HTMLParser
 from datetime import datetime
+from operator import itemgetter
 
 import json
 import pycurl
@@ -11,6 +12,8 @@ import pytz
 
 CAMPUS = "Oregon State - Corvallis"
 CAMPUS_LOC = "C"
+
+DEBUG = False
 
 def getAccessToken(url, client_id, client_secret):
     post_data = "client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type=client_credentials"
@@ -84,7 +87,7 @@ def getDiningSerialization(attrib):
     entry.categories.value = ["Corvallis"]
 
     entry.add('note')
-    entry.note.value = "todo: put url or something else here??"
+    entry.note.value = ""
     if attrib["summary"] is not None:
         entry.note.value = strip_tags(attrib["summary"]).encode('utf-8')
 
@@ -92,104 +95,117 @@ def getDiningSerialization(attrib):
         entry.add("X-D-BLDG-ID")
         entry.x_d_bldg_id.value = attrib["abbreviation"]
 
-    if "latitude" in attrib and "longitude" in attrib:
-        if attrib["latitude"] is not None and attrib["longitude"] is not None:
-            entry.add('geo')
-            entry.geo.value = attrib["latitude"]+';'+attrib["longitude"]
-
-    print attrib
-    print attrib["openHours"].get("1")
-    if "openHours" in attrib and attrib["openHours"] and attrib["type"] == "dining":
+    if (DEBUG):
         print "dining location: " + attrib["name"]
-        entry.add("X-DH-BREAKFAST-LABEL")
-        entry.x_dh_breakfast_label.value = ""
-        entry.add("X-DH-BREAKFAST-SUMMARY")
-        entry.x_dh_breakfast_summary.value = ""
-        entry.add("X-DH-BREAKFAST-URL")
-        entry.x_dh_breakfast_url.value = ""
+        print attrib
 
-        entry.add("X-DH-LUNCH-LABEL")
-        entry.x_dh_lunch_label.value = ""
-        entry.add("X-DH-LUNCH-SUMMARY")
-        entry.x_dh_lunch_summary.value = ""
-        entry.add("X-DH-LUNCH-URL")
-        entry.x_dh_lunch_url.value = ""
-
-
-        entry.add("X-DH-DINNER-LABEL")
-        entry.x_dh_dinner_label.value = ""
-        entry.add("X-DH-DINNER-SUMMARY")
-        entry.x_dh_dinner_summary.value = ""
-        entry.add("X-DH-DINNER-URL")
-        entry.x_dh_dinner_url.value = ""
-
-        entry.add("X-DH-BREAKFAST")
-        entry.x_dh_breakfast.option_param = '1'
-
-        entry.add("X-DH-LUNCH")
-        entry.x_dh_lunch.option_param = '1'
-
-        entry.add("X-DH-DINNER")
-        entry.x_dh_dinner.option_param = '1'
-
+    if "openHours" in attrib and attrib["openHours"] and attrib["type"] == "dining":
+        addFood(entry)
         day_lookup = { '1': "MO", '2': "TU", '3': "WE", '4': "TH", '5': "FR", '6': "SA", '7':"SU" }
 
-        breakfast_days = ""
-        lunch_days = ""
-        dinner_days = ""
+        timeLookup = { }
 
-        # iterate over days 1-7 to add their available to breakfast, lunch and dinner
+        # build data structure to hold hours data for vcf
         for x in ['1', '2', '3', '4', '5', '6', '7']:
-            if attrib["openHours"][x]:
-                meals = len(attrib["openHours"][x])
-                if meals == 1:
-                    breakfast_days += day_lookup[x] + ","
-                if meals > 1:
-                    lunch_days += day_lookup[x] + ","
-                if meals > 2:
-                   dinner_days += day_lookup[x] + ","
+            dayOpenHours = attrib["openHours"][x]
+            for v in dayOpenHours:
+                openTime = getMealTime(v['start']) + "-" + getMealTime(v['end'])
+                if openTime not in timeLookup:
+                    timeLookup[openTime] = ''
 
-        breakfast_days += ";"
-        lunch_days     += ";"
-        dinner_days    += ";"
-        monday = attrib["openHours"]['1']
-        
-        # iterate over # time slots on Monday / first day of week
-        if len(monday) >=1:
-            breakfast_days += getMealTime(monday[0]['start']) + ";" + getMealTime(monday[0]['end']) + ";;"
+                timeLookup[openTime] += day_lookup[x] + ","
 
-        if len(monday) >=2:
-            lunch_days += getMealTime(monday[1]['start']) + ";" + getMealTime(monday[1]['end']) + ";;"
+        orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
-        if len(monday) >=3:
-            dinner_days += getMealTime(monday[2]['start']) + ";" + getMealTime(monday[2]['end']) + ";;"
+        if (DEBUG):
+            print timeLookup.items()
+            print orderedTimeLookup
 
-        entry.x_dh_breakfast.value = breakfast_days
-        entry.x_dh_lunch.value = lunch_days
-        entry.x_dh_dinner.value = dinner_days
-        #@todo: need to match dining location with building id
+        if len(orderedTimeLookup) > 0:
+            entry.x_dh_breakfast.value = getMealDayTime(orderedTimeLookup, 0)
 
-        entry.add("X-D-BLDG-ID")
+        if len(orderedTimeLookup) > 1:
+            entry.x_dh_lunch.value = getMealDayTime(orderedTimeLookup, 1)
 
-        zone = attrib["summary"].encode('utf-8').replace('Zone: ', '')
-        parent_building_map = {
-            'Austin Hall': 'Aust',
-            'Dixon Recreation Center': 'DxLg',
-            'International Living-Learning Center': 'ILLC',
-            'Kelley Engineering Center': 'KEC',
-            'Linus Pauling Science Center': 'LPSC',
-            'Marketplace West': 'WsDn',
-            'McNary Dining': 'McNy',
-            'Memorial Union': 'MU',
-            'Southside Station @ Arnold': 'ArnD',
-            'The Learning Innovation Center': 'VLib', # @todo!!!!!
-            'Valley Library': 'VLib',
-            'Weatherford Hall': 'Wfd',
-        }
-        entry.x_d_bldg_id.value = parent_building_map[zone]
+        if len(orderedTimeLookup) > 2:
+            entry.x_dh_dinner.value = getMealDayTime(orderedTimeLookup, 2)
 
+        entry.x_dh_breakfast.value += ";;"
+        entry.x_dh_lunch.value += ";;"
+        entry.x_dh_dinner.value += ";;"
+
+        addBuildingID(attrib, entry)
 
     return entry
+
+
+def getMealDayTime(orderedTimeLookup, mealType):
+    return orderedTimeLookup[mealType][1] + ";" + orderedTimeLookup[mealType][0].replace('-', ';')
+
+
+def addBuildingID(attrib, entry):
+    """Adds X-D-BLDG-ID to vcard entry
+
+    Args:
+        attrib (object): attribute dictionary from locations api
+        entry (object): vcard object
+    """
+    entry.add("X-D-BLDG-ID")
+
+    # @todo: the names from uhds don't exactly map to a location due to spelling
+    zone = attrib["summary"].encode('utf-8').replace('Zone: ', '')
+    parent_building_map = {
+        'Austin Hall': 'Aust',
+        'Dixon Recreation Center': 'DxLg',
+        'International Living-Learning Center': 'ILLC',
+        'Kelley Engineering Center': 'KEC',
+        'Linus Pauling Science Center': 'LPSC',
+        'Marketplace West': 'WsDn',
+        'McNary Dining': 'McNy',
+        'Memorial Union': 'MU',
+        'Southside Station @ Arnold': 'ArnD',
+        'The Learning Innovation Center': 'LInC',
+        'Valley Library': 'VLib',
+        'Weatherford Hall': 'Wfd',
+    }
+    entry.x_d_bldg_id.value = parent_building_map[zone]
+
+
+def addFood(entry):
+    """Adds label, summary and url for breakfast, lunch and dinner
+
+    The entry passed in is modified. The values added are blank.
+    """
+    entry.add("X-DH-BREAKFAST-LABEL")
+    entry.x_dh_breakfast_label.value = ""
+    entry.add("X-DH-BREAKFAST-SUMMARY")
+    entry.x_dh_breakfast_summary.value = ""
+    entry.add("X-DH-BREAKFAST-URL")
+    entry.x_dh_breakfast_url.value = ""
+
+    entry.add("X-DH-LUNCH-LABEL")
+    entry.x_dh_lunch_label.value = ""
+    entry.add("X-DH-LUNCH-SUMMARY")
+    entry.x_dh_lunch_summary.value = ""
+    entry.add("X-DH-LUNCH-URL")
+    entry.x_dh_lunch_url.value = ""
+
+    entry.add("X-DH-DINNER-LABEL")
+    entry.x_dh_dinner_label.value = ""
+    entry.add("X-DH-DINNER-SUMMARY")
+    entry.x_dh_dinner_summary.value = ""
+    entry.add("X-DH-DINNER-URL")
+    entry.x_dh_dinner_url.value = ""
+
+    entry.add("X-DH-BREAKFAST")
+    entry.x_dh_breakfast.option_param = '1'
+
+    entry.add("X-DH-LUNCH")
+    entry.x_dh_lunch.option_param = '1'
+
+    entry.add("X-DH-DINNER")
+    entry.x_dh_dinner.option_param = '1'
+
 
 # SO: http://stackoverflow.com/questions/753052/strip-html-from-strings-in-python
 class MLStripper(HTMLParser):
@@ -209,6 +225,8 @@ def strip_tags(html):
     return s.get_data()
 
 def getMealTime(datevalue):
+    """Gets the UTC date value from a string and returns the time in local format
+    """
     dateObject = datetime.strptime(datevalue, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=pytz.UTC)
 
     tz = pytz.timezone('America/Los_Angeles') 
