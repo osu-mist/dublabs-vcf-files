@@ -1,59 +1,22 @@
-from HTMLParser import HTMLParser
 from datetime import datetime
 from operator import itemgetter
-from dublabs import api 
+from dublabs import api, util
 
 import json
-import pycurl
-import urllib
 import StringIO
 import string
 import vobject
 import pytz
 
-CAMPUS = "Oregon State - Corvallis"
-CAMPUS_LOC = "C"
 
 DEBUG = False
 
-def getCampus():
-    entry = vobject.vCard()
-    entry.add('n')
-    entry.n.value = CAMPUS
+def getVcardSerialization(attrib):
+    """Returns a vcard object ready to be serialized
 
-    entry.add('fn')
-    entry.fn.value = CAMPUS
-
-    entry.add("X-D-LOC")
-    entry.x_d_loc.value = CAMPUS_LOC
-
-    entry.add('role')
-    entry.role.value = "CAMPUS"
-
-    return entry
-
-def getDiningSerialization(attrib):
-    entry = vobject.vCard()
-    entry.add('n')
-    entry.n.value = attrib["name"]
-
-    entry.add('fn')
-    entry.fn.value = attrib["name"]
-
-    entry.add('X-D-BLDG-LOC')
-    entry.x_d_bldg_loc.value = "C"
-
-    entry.add('categories')
-    entry.categories.value = ["Corvallis"]
-
-    entry.add('note')
-    entry.note.value = ""
-    if attrib["summary"] is not None:
-        entry.note.value = strip_tags(attrib["summary"]).encode('utf-8')
-
-    if "abbreviation" in attrib and attrib["abbreviation"] is not None:
-        entry.add("X-D-BLDG-ID")
-        entry.x_d_bldg_id.value = attrib["abbreviation"]
+    vcard object is populated with needed parameters from attrib data
+    """
+    entry = util.getVcard(attrib)
 
     if (DEBUG):
         print "dining location: " + attrib["name"]
@@ -166,24 +129,6 @@ def addFood(entry):
     entry.add("X-DH-DINNER")
     entry.x_dh_dinner.option_param = '1'
 
-
-# SO: http://stackoverflow.com/questions/753052/strip-html-from-strings-in-python
-class MLStripper(HTMLParser):
-    def __init__(self):
-        self.reset()
-        self.fed = []
-
-    def handle_data(self, d):
-        self.fed.append(d)
-
-    def get_data(self):
-        return ''.join(self.fed)
-
-def strip_tags(html):
-    s = MLStripper()
-    s.feed(html)
-    return s.get_data()
-
 def getMealTime(datevalue):
     """Gets the UTC date value from a string and returns the time in local format
     """
@@ -197,7 +142,7 @@ def getMealTime(datevalue):
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
     
-    entry = getCampus()
+    entry = util.addCampus()
     try:
         vcard = entry.serialize()
     except:
@@ -210,38 +155,24 @@ def writeVcardFile(filename, response):
         if "Food 2 You" in x["attributes"]['name']:
             continue
 
-        entry = getDiningSerialization(x["attributes"])
+        entry = getVcardSerialization(x["attributes"])
 
         try:
             vcard = entry.serialize()
         except:
             vcard = entry.serialize()
 
-        vcard = fixVcardEscaping(vcard)
+        vcard = util.fixVcardEscaping(vcard)
         vcfFile.write(vcard)
 
     vcfFile.close()
 
-def fixVcardEscaping(vcardText):
-    vcardText = vcardText.replace('\;', ';')
-    return vcardText.replace('\,', ',')
-
 # Read configuration file in JSON format
 config_data_file = open('configuration.json')
-config_data      = json.load(config_data_file)
+config_data  = json.load(config_data_file)
 
-base_url         = config_data["hostname"] + config_data["version"] + config_data["api"]
-access_token_url = base_url + config_data["token_endpoint"]
-
-access_token_response = api.getAccessToken(access_token_url, config_data["client_id"], config_data["client_secret"]);
-
-access_token  = access_token_response["access_token"]
-locations_url = base_url + config_data["locations_endpoint"]
-params        = {"type": "dining", "page[size]":200}
+params = {"type": "dining", "page[size]":200}
 
 # Process Dining Data
-response = api.getLocations(locations_url, access_token, params)
+response = api.getLocationsData(config_data, params)
 writeVcardFile('dininglocations.vcf', response)
-
-#@todo: sed -i='' 's/\\;/;/g' dininglocations.vcf && sed -i='' 's/\\,/,/g' dininglocations.vcf
-#python dining_vcf_generator.py && sed -i='' 's/\\;/;/g' dininglocations.vcf && sed -i='' 's/\\,/,/g' dininglocations.vcf
