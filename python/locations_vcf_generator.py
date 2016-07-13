@@ -89,8 +89,8 @@ def getDiningSerialization(attrib):
         entry.note.value = strip_tags(attrib["summary"]).encode('utf-8')
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
-        entry.add("X-D-BLD-ID")
-        entry.x_d_bld_id.value = attrib["abbreviation"]
+        entry.add("X-D-BLDG-ID")
+        entry.x_d_bldg_id.value = attrib["abbreviation"]
 
     if "latitude" in attrib and "longitude" in attrib:
         if attrib["latitude"] is not None and attrib["longitude"] is not None:
@@ -101,6 +101,24 @@ def getDiningSerialization(attrib):
         entry.add("PHOTO")
         entry.photo.value_param = 'uri'
         entry.photo.value = attrib["images"][0]
+
+    #print attrib
+    if "openHours" in attrib and attrib["openHours"] and attrib["type"] == "dining":
+        print "dining location: " + attrib["name"]
+        entry.add("X-DH-BREAKFAST-LABEL")
+        entry.x_dh_breakfast_label.value = "breakfast - todo"
+        entry.add("X-DH-BREAKFAST-SUMMARY")
+        entry.x_dh_breakfast_summary.value = "breakfast - todo"
+        entry.add("X-DH-BREAKFAST-URL")
+        entry.x_dh_breakfast_url.value = "http://example.com/todo"
+
+        entry.add("X-DH-BREAKFAST")
+        entry.x_dh_breakfast.option_param = '1'
+        entry.x_dh_breakfast.value = "MO,TU,SU;070000Z;100000Z;;"
+        # X-DH-BREAKFAST;OPTION=1:MO,TU,SU;070000Z;100000Z;;
+        #@todo: need to match dining location with building id
+
+        
     
     return entry
 
