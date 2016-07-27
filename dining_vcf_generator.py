@@ -40,22 +40,27 @@ def getVcardSerialization(attrib):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
+        breakfast = ""
+        lunch = ""
+        dinner = ""
+        openHourSuffix = ";;"
+
         if (DEBUG):
             print timeLookup.items()
             print orderedTimeLookup
 
         if len(orderedTimeLookup) > 0:
-            entry.x_dh_breakfast.value = getMealDayTime(orderedTimeLookup, 0)
+            breakfast = getMealDayTime(orderedTimeLookup, 0)
 
         if len(orderedTimeLookup) > 1:
-            entry.x_dh_lunch.value = getMealDayTime(orderedTimeLookup, 1)
+            lunch = getMealDayTime(orderedTimeLookup, 1)
 
         if len(orderedTimeLookup) > 2:
-            entry.x_dh_dinner.value = getMealDayTime(orderedTimeLookup, 2)
+            dinner = getMealDayTime(orderedTimeLookup, 2)
 
-        entry.x_dh_breakfast.value += ";;"
-        entry.x_dh_lunch.value += ";;"
-        entry.x_dh_dinner.value += ";;"
+        entry.x_dh_breakfast.value = breakfast + openHourSuffix
+        entry.x_dh_lunch.value = lunch + openHourSuffix
+        entry.x_dh_dinner.value = dinner + openHourSuffix
 
         addBuildingID(attrib, entry)
 
