@@ -99,27 +99,6 @@ def addFood(entry):
 
     The entry passed in is modified. The values added are blank.
     """
-    entry.add("X-DH-BREAKFAST-LABEL")
-    entry.x_dh_breakfast_label.value = ""
-    entry.add("X-DH-BREAKFAST-SUMMARY")
-    entry.x_dh_breakfast_summary.value = ""
-    entry.add("X-DH-BREAKFAST-URL")
-    entry.x_dh_breakfast_url.value = ""
-
-    entry.add("X-DH-LUNCH-LABEL")
-    entry.x_dh_lunch_label.value = ""
-    entry.add("X-DH-LUNCH-SUMMARY")
-    entry.x_dh_lunch_summary.value = ""
-    entry.add("X-DH-LUNCH-URL")
-    entry.x_dh_lunch_url.value = ""
-
-    entry.add("X-DH-DINNER-LABEL")
-    entry.x_dh_dinner_label.value = ""
-    entry.add("X-DH-DINNER-SUMMARY")
-    entry.x_dh_dinner_summary.value = ""
-    entry.add("X-DH-DINNER-URL")
-    entry.x_dh_dinner_url.value = ""
-
     entry.add("X-DH-BREAKFAST")
     entry.x_dh_breakfast.option_param = '1'
 
