@@ -142,14 +142,6 @@ def getMealTime(datevalue):
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
     
-    entry = util.addCampus()
-    try:
-        vcard = entry.serialize()
-    except:
-        vcard = entry.serialize()
-
-    vcfFile.write(vcard)
-
     for x in response["data"]:
         # Skip on campus delivery
         if "Food 2 You" in x["attributes"]['name']:
