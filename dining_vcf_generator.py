@@ -40,22 +40,27 @@ def getVcardSerialization(attrib):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
+        breakfast = ""
+        lunch = ""
+        dinner = ""
+        openHourSuffix = ";;"
+
         if (DEBUG):
             print timeLookup.items()
             print orderedTimeLookup
 
         if len(orderedTimeLookup) > 0:
-            entry.x_dh_breakfast.value = getMealDayTime(orderedTimeLookup, 0)
+            breakfast = getMealDayTime(orderedTimeLookup, 0)
 
         if len(orderedTimeLookup) > 1:
-            entry.x_dh_lunch.value = getMealDayTime(orderedTimeLookup, 1)
+            lunch = getMealDayTime(orderedTimeLookup, 1)
 
         if len(orderedTimeLookup) > 2:
-            entry.x_dh_dinner.value = getMealDayTime(orderedTimeLookup, 2)
+            dinner = getMealDayTime(orderedTimeLookup, 2)
 
-        entry.x_dh_breakfast.value += ";;"
-        entry.x_dh_lunch.value += ";;"
-        entry.x_dh_dinner.value += ";;"
+        entry.x_dh_breakfast.value = breakfast + openHourSuffix
+        entry.x_dh_lunch.value = lunch + openHourSuffix
+        entry.x_dh_dinner.value = dinner + openHourSuffix
 
         addBuildingID(attrib, entry)
 
@@ -99,27 +104,6 @@ def addFood(entry):
 
     The entry passed in is modified. The values added are blank.
     """
-    entry.add("X-DH-BREAKFAST-LABEL")
-    entry.x_dh_breakfast_label.value = ""
-    entry.add("X-DH-BREAKFAST-SUMMARY")
-    entry.x_dh_breakfast_summary.value = ""
-    entry.add("X-DH-BREAKFAST-URL")
-    entry.x_dh_breakfast_url.value = ""
-
-    entry.add("X-DH-LUNCH-LABEL")
-    entry.x_dh_lunch_label.value = ""
-    entry.add("X-DH-LUNCH-SUMMARY")
-    entry.x_dh_lunch_summary.value = ""
-    entry.add("X-DH-LUNCH-URL")
-    entry.x_dh_lunch_url.value = ""
-
-    entry.add("X-DH-DINNER-LABEL")
-    entry.x_dh_dinner_label.value = ""
-    entry.add("X-DH-DINNER-SUMMARY")
-    entry.x_dh_dinner_summary.value = ""
-    entry.add("X-DH-DINNER-URL")
-    entry.x_dh_dinner_url.value = ""
-
     entry.add("X-DH-BREAKFAST")
     entry.x_dh_breakfast.option_param = '1'
 
@@ -137,19 +121,11 @@ def getMealTime(datevalue):
     tz = pytz.timezone('America/Los_Angeles') 
     localTime = tz.normalize(dateObject.astimezone(tz))
 
-    return localTime.strftime('%H%M%S%Z')
+    return localTime.strftime('%H%M%SZ')
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
     
-    entry = util.addCampus()
-    try:
-        vcard = entry.serialize()
-    except:
-        vcard = entry.serialize()
-
-    vcfFile.write(vcard)
-
     for x in response["data"]:
         # Skip on campus delivery
         if "Food 2 You" in x["attributes"]['name']:
