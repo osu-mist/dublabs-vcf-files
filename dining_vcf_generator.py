@@ -116,7 +116,7 @@ def getMealTime(datevalue):
     tz = pytz.timezone('America/Los_Angeles') 
     localTime = tz.normalize(dateObject.astimezone(tz))
 
-    return localTime.strftime('%H%M%S%Z')
+    return localTime.strftime('%H%M%SZ')
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
