@@ -84,7 +84,7 @@ def addBuildingID(attrib, entry):
     zone = attrib["summary"].encode('utf-8').replace('Zone: ', '')
     parent_building_map = {
         'Austin Hall': 'Aust',
-        'Dixon Recreation Center': 'DxLg',
+        'Dixon Recreation Center': 'DxRC',
         'International Living-Learning Center': 'ILLC',
         'Kelley Engineering Center': 'KEC',
         'Linus Pauling Science Center': 'LPSC',
