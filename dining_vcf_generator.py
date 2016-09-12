@@ -7,6 +7,7 @@ import StringIO
 import string
 import vobject
 import pytz
+import sys
 
 
 DEBUG = False
@@ -143,12 +144,14 @@ def writeVcardFile(filename, response):
 
     vcfFile.close()
 
-# Read configuration file in JSON format
-config_data_file = open('configuration.json')
-config_data  = json.load(config_data_file)
 
-params = {"type": "dining", "page[size]":200}
-
-# Process Dining Data
-response = api.getLocationsData(config_data, params)
-writeVcardFile('dininglocations.vcf', response)
+try:
+    # Read configuration file in JSON format
+    config_data_file = open(sys.argv[1])
+    config_data  = json.load(config_data_file)
+    params = {"type": "dining", "page[size]": 200}
+    # Process Dining Data
+    response = api.getLocationsData(config_data, params)
+    writeVcardFile('dininglocations.vcf', response)
+except:
+    print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
