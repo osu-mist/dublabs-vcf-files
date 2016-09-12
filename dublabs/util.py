@@ -63,7 +63,7 @@ def getVcard(attrib):
 
     if "abbreviation" in attrib and attrib["abbreviation"] is not None:
         entry.add("X-D-BLDG-ID")
-        entry.x_d_bldg_id.value = attrib["abbreviation"]
+        entry.x_d_bldg_id.value = attrib["abbreviation"].upper()
 
     return entry
 

@@ -84,18 +84,18 @@ def addBuildingID(attrib, entry):
     # @todo: the names from uhds don't exactly map to a location due to spelling
     zone = attrib["summary"].encode('utf-8').replace('Zone: ', '')
     parent_building_map = {
-        'Austin Hall': 'Aust',
-        'Dixon Recreation Center': 'DxRC',
+        'Austin Hall': 'AUST',
+        'Dixon Recreation Center': 'DXRC',
         'International Living-Learning Center': 'ILLC',
         'Kelley Engineering Center': 'KEC',
         'Linus Pauling Science Center': 'LPSC',
-        'Marketplace West': 'WsDn',
-        'McNary Dining': 'McNy',
+        'Marketplace West': 'WSDN',
+        'McNary Dining': 'MCNY',
         'Memorial Union': 'MU',
-        'Southside Station @ Arnold': 'ArnD',
-        'The Learning Innovation Center': 'LInC',
-        'Valley Library': 'VLib',
-        'Weatherford Hall': 'Wfd',
+        'Southside Station @ Arnold': 'ARND',
+        'The Learning Innovation Center': 'LINC',
+        'Valley Library': 'VLIB',
+        'Weatherford Hall': 'WFD',
     }
     entry.x_d_bldg_id.value = parent_building_map[zone]
 
