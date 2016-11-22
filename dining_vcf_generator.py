@@ -72,12 +72,6 @@ def getVcardSerialization(attrib):
 
     return entry
 
-def countHours(openHour):
-    """
-    Calculate hours for openHours in the format of '100000Z-220000Z'
-    """
-    match = re.search(r'(?P<start>\d*)Z-(?P<end>\d*)Z', openHour)
-    return abs(int(match.group('end')) - int(match.group('start'))) / 10000
 
 def getStartTime(openHour):
     """
@@ -159,6 +153,7 @@ def getMealTime(datevalue):
 
     return localTime.strftime('%H%M%SZ')
 
+
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
 
@@ -175,6 +170,7 @@ def writeVcardFile(filename, response):
             vcard = entry.serialize()
 
         vcard = util.fixVcardEscaping(vcard)
+        vcard = re.sub(r"-\d", "", vcard)
         vcfFile.write(vcard)
 
     vcfFile.close()
