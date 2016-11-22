@@ -1,0 +1,253 @@
+dining location: Peet`s Coffee
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-26T23:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-26T23:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-26T23:00:00Z'}], u'5': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-26T23:00:00Z'}], u'4': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-26T23:00:00Z'}], u'7': [], u'6': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-01T21:00:00Z'}]}, u'latitude': u'44.559944', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Peet`s Coffee', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.276186', u'summary': u'Zone: International Living-Learning Center'}
+---------------------------------------
+【timeLookup.items】 [('090000Z-140000Z', 'SA,'), ('073000Z-160000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('073000Z-160000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-140000Z', 'SA,')]
+【breakfast】 MO,TU,WE,TH,FR,;073000Z;160000Z
+【lunch】 SA,;090000Z;140000Z
+dining location: EBGBs
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'5': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'4': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'7': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T05:00:00Z'}], u'6': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T05:00:00Z'}]}, u'latitude': u'44.563930', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'EBGBs', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283696', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-220000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-220000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('070000Z-220000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-220000Z', 'SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;220000Z
+【lunch】 SA,SU,;090000Z;220000Z
+dining location: Boardwalk Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'3': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'2': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'5': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'4': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'7': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T03:00:00Z'}], u'6': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T03:00:00Z'}]}, u'latitude': u'44.564003', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Boardwalk Cafe', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.272136', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('170000Z-200000Z', 'MO,TU,WE,TH,FR,'), ('110000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('070000Z-100000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-200000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('070000Z-100000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-200000Z', 'SA,SU,'), ('110000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-200000Z', 'MO,TU,WE,TH,FR,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;100000Z
+【lunch】 SA,SU,;090000Z;200000Z
+【dinner】 MO,TU,WE,TH,FR,;110000Z;140000Z
+dining location: JavaStop
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-21T14:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'3': [{u'start': u'2016-09-21T14:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'2': [{u'start': u'2016-09-21T14:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'5': [{u'start': u'2016-09-23T14:00:00Z', u'end': u'2016-09-24T00:00:00Z'}], u'4': [{u'start': u'2016-09-21T14:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'7': [], u'6': [{u'start': u'2016-09-24T16:00:00Z', u'end': u'2016-09-24T22:00:00Z'}]}, u'latitude': u'44.564938', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'JavaStop', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278703', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-170000Z', 'FR,'), ('090000Z-150000Z', 'SA,'), ('070000Z-200000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('070000Z-170000Z', 'FR,'), ('070000Z-200000Z', 'MO,TU,WE,TH,'), ('090000Z-150000Z', 'SA,')]
+【breakfast】 FR,;070000Z;170000Z
+【lunch】 MO,TU,WE,TH,;070000Z;200000Z
+【dinner】 SA,;090000Z;150000Z
+dining location: Cascadia Deli
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'7': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'6': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}]}, u'latitude': u'44.559931', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Cascadia Deli', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.276347', u'summary': u'Zone: International Living-Learning Center'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【orderedTimeLookup:】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,SA,SU,;110000Z;210000Z
+dining location: Cascadia Market
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T16:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'3': [{u'start': u'2016-09-26T16:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'2': [{u'start': u'2016-09-26T16:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'5': [{u'start': u'2016-09-26T16:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'4': [{u'start': u'2016-09-26T16:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'7': [{u'start': u'2016-10-01T17:00:00Z', u'end': u'2016-10-02T05:00:00Z'}], u'6': [{u'start': u'2016-10-01T17:00:00Z', u'end': u'2016-10-02T05:00:00Z'}]}, u'latitude': u'44.559936', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Cascadia Market', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.276325', u'summary': u'Zone: International Living-Learning Center'}
+---------------------------------------
+【timeLookup.items】 [('090000Z-220000Z', 'MO,TU,WE,TH,FR,'), ('100000Z-220000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('090000Z-220000Z', 'MO,TU,WE,TH,FR,'), ('100000Z-220000Z', 'SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;090000Z;220000Z
+【lunch】 SA,SU,;100000Z;220000Z
+dining location: Calabaloo's
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'3': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'2': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'5': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'4': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.564033', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Calabaloo's", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283615', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('170000Z-200000Z', 'MO,TU,WE,TH,FR,'), ('110000Z-140000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('110000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-200000Z', 'MO,TU,WE,TH,FR,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;140000Z
+【lunch】 MO,TU,WE,TH,FR,;170000Z;200000Z
+dining location: Ring of Fire
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'3': [{u'start': u'2016-09-28T00:00:00Z', u'end': u'2016-09-28T02:30:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'2': [{u'start': u'2016-09-28T00:00:00Z', u'end': u'2016-09-28T02:30:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'5': [{u'start': u'2016-09-28T00:00:00Z', u'end': u'2016-09-28T02:30:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'4': [{u'start': u'2016-09-28T00:00:00Z', u'end': u'2016-09-28T02:30:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'7': [], u'6': [{u'start': u'2016-09-28T00:00:00Z', u'end': u'2016-09-28T02:30:00Z'}]}, u'latitude': u'44.564045', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Ring of Fire', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283428', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('170000Z-193000Z', 'TU,WE,TH,FR,SA,'), ('110000Z-140000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('110000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-193000Z', 'TU,WE,TH,FR,SA,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;140000Z
+【lunch】 TU,WE,TH,FR,SA,;170000Z;193000Z
+dining location: Tomassito's Italian Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}], u'3': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}], u'2': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}], u'4': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}], u'7': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'6': []}, u'latitude': u'44.564003', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Tomassito's Italian Cafe", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283412', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-143000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-200000Z', 'MO,TU,WE,TH,SU,')]
+【orderedTimeLookup:】 [('110000Z-143000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-200000Z', 'MO,TU,WE,TH,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;143000Z
+【lunch】 MO,TU,WE,TH,SU,;170000Z;200000Z
+dining location: Joe's Burgers
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-19T17:00:00Z', u'end': u'2016-09-20T04:00:00Z'}], u'3': [{u'start': u'2016-09-19T17:00:00Z', u'end': u'2016-09-20T04:00:00Z'}], u'2': [{u'start': u'2016-09-19T17:00:00Z', u'end': u'2016-09-20T04:00:00Z'}], u'5': [{u'start': u'2016-09-19T17:00:00Z', u'end': u'2016-09-20T04:00:00Z'}], u'4': [{u'start': u'2016-09-19T17:00:00Z', u'end': u'2016-09-20T04:00:00Z'}], u'7': [{u'start': u'2016-09-18T18:00:00Z', u'end': u'2016-09-19T02:00:00Z'}], u'6': [{u'start': u'2016-09-18T18:00:00Z', u'end': u'2016-09-19T02:00:00Z'}]}, u'latitude': u'44.564982', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Joe's Burgers", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.279525', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-190000Z', 'SA,SU,'), ('100000Z-210000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('100000Z-210000Z', 'MO,TU,WE,TH,FR,'), ('110000Z-190000Z', 'SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;100000Z;210000Z
+【lunch】 SA,SU,;110000Z;190000Z
+dining location: Pangea Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-19T22:00:00Z'}], u'3': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-19T22:00:00Z'}], u'2': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-19T22:00:00Z'}], u'5': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-19T22:00:00Z'}], u'4': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-19T22:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.564982', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Pangea Cafe', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.279134', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-150000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('073000Z-150000Z', 'MO,TU,WE,TH,FR,')]
+【breakfast】 MO,TU,WE,TH,FR,;073000Z;150000Z
+dining location: Grill
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.560600', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Grill', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277694', u'summary': u'Zone: Southside Station @ Arnold'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;200000Z
+dining location: Dixon Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'5': [{u'start': u'2016-09-30T14:00:00Z', u'end': u'2016-10-01T01:00:00Z'}], u'4': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'7': [{u'start': u'2016-09-24T18:00:00Z', u'end': u'2016-09-25T03:00:00Z'}], u'6': [{u'start': u'2016-09-24T18:00:00Z', u'end': u'2016-09-25T03:00:00Z'}]}, u'latitude': u'44.563137', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Dixon Cafe', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278980', u'summary': u'Zone: Dixon Recreation Center'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-220000Z', 'MO,TU,WE,TH,'), ('070000Z-180000Z', 'FR,'), ('110000Z-200000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('070000Z-180000Z', 'FR,'), ('070000Z-220000Z', 'MO,TU,WE,TH,'), ('110000Z-200000Z', 'SA,SU,')]
+【breakfast】 FR,;070000Z;180000Z
+【lunch】 MO,TU,WE,TH,;070000Z;220000Z
+【dinner】 SA,SU,;110000Z;200000Z
+dining location: Ava's Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'3': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'2': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'5': [{u'start': u'2016-09-23T14:30:00Z', u'end': u'2016-09-23T23:00:00Z'}], u'4': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.566622', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Ava's Cafe", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283252', u'summary': u'Zone: Linus Pauling Science Center'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-160000Z', 'FR,'), ('073000Z-180000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('073000Z-160000Z', 'FR,'), ('073000Z-180000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;073000Z;160000Z
+【lunch】 MO,TU,WE,TH,;073000Z;180000Z
+dining location: Clubhouse Deli
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T03:30:00Z'}], u'3': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T03:30:00Z'}], u'2': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T03:30:00Z'}], u'5': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T03:30:00Z'}], u'4': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-27T03:30:00Z'}], u'7': [{u'start': u'2016-09-25T16:00:00Z', u'end': u'2016-09-26T03:30:00Z'}], u'6': [{u'start': u'2016-09-25T16:00:00Z', u'end': u'2016-09-26T03:30:00Z'}]}, u'latitude': u'44.563972', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Clubhouse Deli', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283530', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-203000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-203000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('070000Z-203000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-203000Z', 'SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;203000Z
+【lunch】 SA,SU,;090000Z;203000Z
+dining location: Cooper`s Creek BBQ
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T02:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'3': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T02:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'2': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T02:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'5': [{u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'4': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T02:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T21:00:00Z'}], u'7': [{u'start': u'2016-10-03T00:00:00Z', u'end': u'2016-10-03T02:30:00Z'}, {u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-01T21:00:00Z'}], u'6': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-01T21:00:00Z'}]}, u'latitude': u'44.564045', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Cooper`s Creek BBQ', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283245', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-193000Z', 'MO,TU,WE,TH,SU,'), ('090000Z-140000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('070000Z-140000Z', 'MO,TU,WE,TH,FR,'), ('090000Z-140000Z', 'SA,SU,'), ('170000Z-193000Z', 'MO,TU,WE,TH,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;140000Z
+【lunch】 SA,SU,;090000Z;140000Z
+【dinner】 MO,TU,WE,TH,SU,;170000Z;193000Z
+dining location: Buenos
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [], u'3': [], u'2': [], u'5': [], u'4': [], u'7': [], u'6': []}, u'latitude': u'44.564971', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Buenos', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278735', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 []
+【orderedTimeLookup:】 []
+dining location: Panda Express
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-10-03T16:00:00Z', u'end': u'2016-10-04T03:30:00Z'}], u'3': [{u'start': u'2016-10-03T16:00:00Z', u'end': u'2016-10-04T03:30:00Z'}], u'2': [{u'start': u'2016-10-03T16:00:00Z', u'end': u'2016-10-04T03:30:00Z'}], u'5': [{u'start': u'2016-10-03T16:00:00Z', u'end': u'2016-10-04T03:30:00Z'}], u'4': [{u'start': u'2016-10-03T16:00:00Z', u'end': u'2016-10-04T03:30:00Z'}], u'7': [], u'6': [{u'start': u'2016-10-01T17:00:00Z', u'end': u'2016-10-02T02:30:00Z'}]}, u'latitude': u'44.564866', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Panda Express', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.279543', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('100000Z-193000Z', 'SA,'), ('090000Z-203000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('090000Z-203000Z', 'MO,TU,WE,TH,FR,'), ('100000Z-193000Z', 'SA,')]
+【breakfast】 MO,TU,WE,TH,FR,;090000Z;203000Z
+【lunch】 SA,;100000Z;193000Z
+dining location: Southside Station Pizzeria
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T22:00:00Z'}], u'3': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T22:00:00Z'}], u'2': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T22:00:00Z'}], u'5': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T22:00:00Z'}], u'4': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T22:00:00Z'}], u'7': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-10-01T19:00:00Z', u'end': u'2016-10-01T22:00:00Z'}], u'6': [{u'start': u'2016-09-26T23:30:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-10-01T19:00:00Z', u'end': u'2016-10-01T22:00:00Z'}]}, u'latitude': u'44.560809', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Southside Station Pizzeria', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277596', u'summary': u'Zone: Southside Station @ Arnold'}
+---------------------------------------
+【timeLookup.items】 [('120000Z-150000Z', 'SA,SU,'), ('163000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,'), ('110000Z-150000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('110000Z-150000Z', 'MO,TU,WE,TH,FR,'), ('120000Z-150000Z', 'SA,SU,'), ('163000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;150000Z
+【lunch】 SA,SU,;120000Z;150000Z
+【dinner】 MO,TU,WE,TH,FR,SA,SU,;163000Z;200000Z
+dining location: Serrano
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'7': [{u'start': u'2016-10-01T19:00:00Z', u'end': u'2016-10-02T04:00:00Z'}], u'6': [{u'start': u'2016-10-01T19:00:00Z', u'end': u'2016-10-02T04:00:00Z'}]}, u'latitude': u'44.563984', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Serrano', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.283299', u'summary': u'Zone: Marketplace West'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,'), ('120000Z-210000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,'), ('120000Z-210000Z', 'SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;210000Z
+【lunch】 SA,SU,;120000Z;210000Z
+dining location: Calabaloo's
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T04:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.564056', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Calabaloo's", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.272093', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('110000Z-210000Z', 'MO,TU,WE,TH,FR,')]
+【breakfast】 MO,TU,WE,TH,FR,;110000Z;210000Z
+dining location: La Calle
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'3': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'2': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'5': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'4': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'7': [{u'start': u'2016-09-26T02:30:00Z', u'end': u'2016-09-26T07:00:00Z'}], u'6': []}, u'latitude': u'44.564059', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'La Calle', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.272187', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('193000Z-000000Z', 'MO,TU,WE,TH,FR,SU,')]
+【orderedTimeLookup:】 [('193000Z-000000Z', 'MO,TU,WE,TH,FR,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,SU,;193000Z;000000Z
+dining location: The Main Squeeze
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'3': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'2': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'5': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-30T19:00:00Z', u'end': u'2016-10-01T05:00:00Z'}], u'4': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'7': [{u'start': u'2016-09-26T19:00:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'6': [{u'start': u'2016-09-30T19:00:00Z', u'end': u'2016-10-01T05:00:00Z'}]}, u'latitude': u'44.564179', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'The Main Squeeze', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.272366', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('120000Z-220000Z', 'FR,SA,'), ('120000Z-000000Z', 'MO,TU,WE,TH,FR,SU,')]
+【orderedTimeLookup:】 [('120000Z-000000Z', 'MO,TU,WE,TH,FR,SU,'), ('120000Z-220000Z', 'FR,SA,')]
+【breakfast】 MO,TU,WE,TH,FR,SU,;120000Z;000000Z
+【lunch】 FR,SA,;120000Z;220000Z
+dining location: Bites
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T02:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T02:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T02:00:00Z'}], u'5': [{u'start': u'2016-09-30T14:30:00Z', u'end': u'2016-10-01T00:00:00Z'}], u'4': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T02:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.564879', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Bites', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278375', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-190000Z', 'MO,TU,WE,TH,'), ('073000Z-170000Z', 'FR,')]
+【orderedTimeLookup:】 [('073000Z-170000Z', 'FR,'), ('073000Z-190000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;073000Z;170000Z
+【lunch】 MO,TU,WE,TH,;073000Z;190000Z
+dining location: Nori Grill
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'5': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'7': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'6': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T03:00:00Z'}]}, u'latitude': u'44.560506', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Nori Grill', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277613', u'summary': u'Zone: Southside Station @ Arnold'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【orderedTimeLookup:】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,SA,SU,;110000Z;200000Z
+dining location: The Dam
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:00:00Z'}], u'3': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:00:00Z'}], u'2': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:00:00Z'}], u'5': [{u'start': u'2016-09-23T14:30:00Z', u'end': u'2016-09-23T23:00:00Z'}], u'4': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.564903', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'The Dam', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277416', u'summary': u'Zone: The Learning Innovation Center'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-160000Z', 'FR,'), ('073000Z-170000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('073000Z-160000Z', 'FR,'), ('073000Z-170000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;073000Z;160000Z
+【lunch】 MO,TU,WE,TH,;073000Z;170000Z
+dining location: Bing's Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'5': [{u'start': u'2016-09-30T14:30:00Z', u'end': u'2016-10-01T00:00:00Z'}], u'4': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T05:00:00Z'}], u'7': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T00:00:00Z'}], u'6': [{u'start': u'2016-10-01T16:00:00Z', u'end': u'2016-10-02T00:00:00Z'}]}, u'latitude': u'44.564045', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Bing's Cafe", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.280264', u'summary': u'Zone: Weatherford Hall'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-170000Z', 'FR,'), ('073000Z-220000Z', 'MO,TU,WE,TH,'), ('090000Z-170000Z', 'SA,SU,')]
+【orderedTimeLookup:】 [('073000Z-170000Z', 'FR,'), ('073000Z-220000Z', 'MO,TU,WE,TH,'), ('090000Z-170000Z', 'SA,SU,')]
+【breakfast】 FR,;073000Z;170000Z
+【lunch】 MO,TU,WE,TH,;073000Z;220000Z
+【dinner】 SA,SU,;090000Z;170000Z
+dining location: Trader Bing's
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'3': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'2': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'5': [{u'start': u'2016-09-23T14:30:00Z', u'end': u'2016-09-23T23:00:00Z'}], u'4': [{u'start': u'2016-09-19T14:30:00Z', u'end': u'2016-09-20T01:00:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.565050', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"Trader Bing's", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.282096', u'summary': u'Zone: Austin Hall'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-160000Z', 'FR,'), ('073000Z-180000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('073000Z-160000Z', 'FR,'), ('073000Z-180000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;073000Z;160000Z
+【lunch】 MO,TU,WE,TH,;073000Z;180000Z
+dining location: e.Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'3': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'2': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'5': [{u'start': u'2016-09-23T14:30:00Z', u'end': u'2016-09-24T00:00:00Z'}], u'4': [{u'start': u'2016-09-21T14:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.567207', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'e.Cafe', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278578', u'summary': u'Zone: Kelley Engineering Center'}
+---------------------------------------
+【timeLookup.items】 [('073000Z-173000Z', 'MO,TU,WE,TH,'), ('073000Z-170000Z', 'FR,')]
+【orderedTimeLookup:】 [('073000Z-170000Z', 'FR,'), ('073000Z-173000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;073000Z;170000Z
+【lunch】 MO,TU,WE,TH,;073000Z;173000Z
+dining location: Five Four One
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T02:30:00Z'}], u'3': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T02:30:00Z'}], u'2': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T02:30:00Z'}], u'5': [{u'start': u'2016-09-30T18:00:00Z', u'end': u'2016-09-30T21:00:00Z'}], u'4': [{u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-27T02:30:00Z'}], u'7': [{u'start': u'2016-10-03T00:00:00Z', u'end': u'2016-10-03T02:30:00Z'}], u'6': []}, u'latitude': u'44.564156', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Five Four One', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.271932', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('170000Z-193000Z', 'SU,'), ('110000Z-193000Z', 'MO,TU,WE,TH,'), ('110000Z-140000Z', 'FR,')]
+【orderedTimeLookup:】 [('110000Z-140000Z', 'FR,'), ('110000Z-193000Z', 'MO,TU,WE,TH,'), ('170000Z-193000Z', 'SU,')]
+【breakfast】 FR,;110000Z;140000Z
+【lunch】 MO,TU,WE,TH,;110000Z;193000Z
+【dinner】 SU,;170000Z;193000Z
+dining location: RainTree Coffee
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T22:30:00Z'}], u'3': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T22:30:00Z'}], u'2': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T22:30:00Z'}], u'5': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T22:30:00Z'}], u'4': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T22:30:00Z'}], u'7': [{u'start': u'2016-09-27T02:30:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'6': []}, u'latitude': u'44.564060', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'RainTree Coffee', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.272323', u'summary': u'Zone: McNary Dining'}
+---------------------------------------
+【timeLookup.items】 [('070000Z-153000Z', 'MO,TU,WE,TH,FR,'), ('193000Z-000000Z', 'MO,TU,WE,TH,FR,SU,')]
+【orderedTimeLookup:】 [('070000Z-153000Z', 'MO,TU,WE,TH,FR,'), ('193000Z-000000Z', 'MO,TU,WE,TH,FR,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;153000Z
+【lunch】 MO,TU,WE,TH,FR,SU,;193000Z;000000Z
+dining location: North Porch Cafe
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-21T17:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'3': [{u'start': u'2016-09-21T17:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'2': [{u'start': u'2016-09-21T17:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'5': [{u'start': u'2016-09-23T17:30:00Z', u'end': u'2016-09-23T22:00:00Z'}], u'4': [{u'start': u'2016-09-21T17:30:00Z', u'end': u'2016-09-22T00:30:00Z'}], u'7': [], u'6': []}, u'latitude': u'44.565110', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'North Porch Cafe', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.278194', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('103000Z-150000Z', 'FR,'), ('103000Z-173000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('103000Z-150000Z', 'FR,'), ('103000Z-173000Z', 'MO,TU,WE,TH,')]
+【breakfast】 FR,;103000Z;150000Z
+【lunch】 MO,TU,WE,TH,;103000Z;173000Z
+dining location: TOGO's
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-21T15:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'3': [{u'start': u'2016-09-21T15:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'2': [{u'start': u'2016-09-21T15:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'5': [{u'start': u'2016-09-23T15:00:00Z', u'end': u'2016-09-24T02:00:00Z'}], u'4': [{u'start': u'2016-09-21T15:00:00Z', u'end': u'2016-09-22T03:00:00Z'}], u'7': [{u'start': u'2016-09-24T17:00:00Z', u'end': u'2016-09-24T22:00:00Z'}], u'6': [{u'start': u'2016-09-24T17:00:00Z', u'end': u'2016-09-24T22:00:00Z'}]}, u'latitude': u'44.564949', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u"TOGO's", u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.279534', u'summary': u'Zone: Memorial Union'}
+---------------------------------------
+【timeLookup.items】 [('100000Z-150000Z', 'SA,SU,'), ('080000Z-190000Z', 'FR,'), ('080000Z-200000Z', 'MO,TU,WE,TH,')]
+【orderedTimeLookup:】 [('080000Z-190000Z', 'FR,'), ('080000Z-200000Z', 'MO,TU,WE,TH,'), ('100000Z-150000Z', 'SA,SU,')]
+【breakfast】 FR,;080000Z;190000Z
+【lunch】 MO,TU,WE,TH,;080000Z;200000Z
+【dinner】 SA,SU,;100000Z;150000Z
+dining location: Global Fare
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'3': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'2': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'5': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'4': [{u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}, {u'start': u'2016-09-26T18:00:00Z', u'end': u'2016-09-26T21:30:00Z'}, {u'start': u'2016-09-26T14:00:00Z', u'end': u'2016-09-26T17:00:00Z'}], u'7': [{u'start': u'2016-10-01T17:00:00Z', u'end': u'2016-10-01T21:00:00Z'}, {u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}], u'6': [{u'start': u'2016-10-01T17:00:00Z', u'end': u'2016-10-01T21:00:00Z'}, {u'start': u'2016-09-27T00:00:00Z', u'end': u'2016-09-27T03:00:00Z'}]}, u'latitude': u'44.560639', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Global Fare', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277849', u'summary': u'Zone: Southside Station @ Arnold'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-143000Z', 'MO,TU,WE,TH,FR,'), ('100000Z-140000Z', 'SA,SU,'), ('170000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,'), ('070000Z-100000Z', 'MO,TU,WE,TH,FR,')]
+【orderedTimeLookup:】 [('070000Z-100000Z', 'MO,TU,WE,TH,FR,'), ('100000Z-140000Z', 'SA,SU,'), ('110000Z-143000Z', 'MO,TU,WE,TH,FR,'), ('170000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,;070000Z;100000Z
+【lunch】 SA,SU,;100000Z;140000Z
+【dinner】 MO,TU,WE,TH,FR,;110000Z;143000Z
+dining location: Southside Station Deli
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'3': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'2': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'5': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'4': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'7': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}], u'6': [{u'start': u'2016-10-21T18:00:00Z', u'end': u'2016-10-22T03:00:00Z'}]}, u'latitude': u'44.560798', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Southside Station Deli', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.277648', u'summary': u'Zone: Southside Station @ Arnold'}
+---------------------------------------
+【timeLookup.items】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【orderedTimeLookup:】 [('110000Z-200000Z', 'MO,TU,WE,TH,FR,SA,SU,')]
+【breakfast】 MO,TU,WE,TH,FR,SA,SU,;110000Z;200000Z
+dining location: Java II
+{u'telephone': None, u'county': None, u'departments': None, u'images': None, u'calendar': None, u'campus': u'corvallis', u'city': None, u'zip': None, u'state': None, u'openHours': {u'1': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'3': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'2': [{u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'5': [{u'start': u'2016-09-30T14:30:00Z', u'end': u'2016-10-01T00:00:00Z'}], u'4': [{u'start': u'2016-09-29T14:30:00Z', u'end': u'2016-09-30T06:00:00Z'}, {u'start': u'2016-09-26T14:30:00Z', u'end': u'2016-09-27T07:00:00Z'}], u'7': [{u'start': u'2016-10-02T17:00:00Z', u'end': u'2016-10-03T05:00:00Z'}], u'6': [{u'start': u'2016-10-01T18:00:00Z', u'end': u'2016-10-02T01:00:00Z'}]}, u'latitude': u'44.565303', u'type': u'dining', u'website': None, u'fax': None, u'description': None, u'address': None, u'name': u'Java II', u'abbreviation': None, u'thumbnails': None, u'sqft': None, u'longitude': u'-123.275673', u'summary': u'Zone: Valley Library'}
+---------------------------------------
+【timeLookup.items】 [('100000Z-220000Z', 'SU,'), ('073000Z-170000Z', 'FR,'), ('073000Z-230000Z', 'TH,'), ('073000Z-000000Z', 'MO,TU,WE,TH,'), ('110000Z-180000Z', 'SA,')]
+【orderedTimeLookup:】 [('073000Z-000000Z', 'MO,TU,WE,TH,'), ('073000Z-170000Z', 'FR,'), ('073000Z-230000Z', 'TH,'), ('100000Z-220000Z', 'SU,'), ('110000Z-180000Z', 'SA,')]
+【breakfast】 MO,TU,WE,TH,;073000Z;000000Z
+【lunch】 FR,;073000Z;170000Z
+【dinner】 TH,;073000Z;230000Z
