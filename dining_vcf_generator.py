@@ -2,7 +2,6 @@
 from datetime import datetime
 from operator import itemgetter
 from dublabs import api, util
-from collections import defaultdict
 
 import json
 import StringIO
@@ -13,7 +12,7 @@ import sys
 import re
 
 
-DEBUG = True
+DEBUG = False
 BREAKFAST_LABEL = "OpenHour"
 LUNCH_LABEL = "OpenHour"
 DINNER_LABEL = "OpenHour"
@@ -30,9 +29,9 @@ def getVcardSerialization(attrib):
         print attrib
 
     if "openHours" in attrib and attrib["openHours"] and attrib["type"] == "dining":
-        addFood(entry, "breakfast")
-        addFood(entry, "lunch")
-        addFood(entry, "dinner")
+        # addFood(entry, "breakfast")
+        # addFood(entry, "lunch")
+        # addFood(entry, "dinner")
         day_lookup = { '1': "MO", '2': "TU", '3': "WE", '4': "TH", '5': "FR", '6': "SA", '7':"SU" }
 
         timeLookup = { }
@@ -49,43 +48,25 @@ def getVcardSerialization(attrib):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
-        breakfast = ""
-        lunch = ""
-        dinner = ""
         openHourSuffix = ";;"
 
         if (DEBUG):
             print "【timeLookup.items】", timeLookup.items()
             print "【orderedTimeLookup:】", orderedTimeLookup
 
-        # if len(orderedTimeLookup) > 0:
-        #     breakfast = getMealDayTime(orderedTimeLookup, 0)
-        #     print "【breakfast】", breakfast
-
-        # if len(orderedTimeLookup) > 1:
-        #     lunch = getMealDayTime(orderedTimeLookup, 1)
-        #     print "【lunch】", lunch
-
-        # if len(orderedTimeLookup) > 2:
-        #     dinner = getMealDayTime(orderedTimeLookup, 2)
-        #     print "【dinner】", dinner
-
-        # entry.x_dh_breakfast_1.value = breakfast + openHourSuffix
-        # entry.x_dh_lunch.value = lunch + openHourSuffix
-        # entry.x_dh_dinner.value = dinner + openHourSuffix
-
-        # br_option, lunch_option, dinner_option = 1, 1, 1
-        # for i, (openHour, _) in enumerate(orderedTimeLookup):
-        #     if countHours(openHour) >= 7:
-        #         if br_option > 1:
-        #             entry.add("X-DH-BREAKFAST")
-        #             entry.x_dh_breakfast.option_param = str(br_option)
-        #         breakfast = getMealDayTime(orderedTimeLookup, i)
-        #         entry.x_dh_breakfast.value = breakfast + openHourSuffix # overwrites previous one
-        #         entry.x_dh_breakfast_label.value = "Open Hours"
-        #         br_option += 1
-        #     else:
-        #         pass
+        br_option, lunch_option, dinner_option = 1, 1, 1
+        for i, (openHour, _) in enumerate(orderedTimeLookup):
+            time = getStartTime(openHour)
+            value = getMealDayTime(orderedTimeLookup, i) + openHourSuffix
+            if time < 1030:
+                addFood(entry, "breakfast", value, str(br_option))
+                br_option += 1
+            elif time >= 1530:
+                addFood(entry, "dinner", value, str(dinner_option))
+                dinner_option += 1
+            else:
+                addFood(entry, "lunch", value, str(lunch_option))
+                lunch_option += 1
 
         addBuildingID(attrib, entry)
 
@@ -97,6 +78,16 @@ def countHours(openHour):
     """
     match = re.search(r'(?P<start>\d*)Z-(?P<end>\d*)Z', openHour)
     return abs(int(match.group('end')) - int(match.group('start'))) / 10000
+
+def getStartTime(openHour):
+    """
+    Return the starting time of the open hour
+    :type: String, e.g.'100000Z-220000Z'
+    :rtype: Int, e.g.1000
+    """
+    match = re.search(r'(?P<start>\d*)Z-\d*Z', openHour)
+    return int(match.group('start')) / 100
+
 
 def getMealDayTime(orderedTimeLookup, mealType):
     return orderedTimeLookup[mealType][1] + ";" + orderedTimeLookup[mealType][0].replace('-', ';')
@@ -130,43 +121,33 @@ def addBuildingID(attrib, entry):
     entry.x_d_bldg_id.value = parent_building_map[zone]
 
 
-# def addFood(entry):
-#     """Adds label, summary and url for breakfast, lunch and dinner
-
-#     The entry passed in is modified. The values added are blank.
-#     """
-#     br = entry.add("X-DH-BREAKFAST-1")
-#     br.option_param = '1'
-#     label = entry.add("X-DH-BREAKFAST-LABEL")
-#     label.value = "OpenHour"
-
-#     entry.add("X-DH-LUNCH")
-#     entry.x_dh_lunch.option_param = '1'
-
-#     entry.add("X-DH-DINNER")
-#     entry.x_dh_dinner.option_param = '1'
-
-def addFood(entry, mealTime, option_param="1"):
+def addFood(entry, mealTime, value="", option_param="1"):
     """
     Adds label, option_param for breakfast/lunch/dinner
     :type mealTime: String
     :type option_param: Int
     """
     if mealTime == "breakfast":
-        br = entry.add("X-DH-BREAKFAST-"+ option_param)
-        br.option_param = option_param
+        tmp = entry.add("X-DH-BREAKFAST-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
         label = entry.add("X-DH-BREAKFAST-%s-LABEL" % option_param)
         label.value = BREAKFAST_LABEL
-    if mealTime == "lunch":
-        br = entry.add("X-DH-LUNCH-"+ option_param)
-        br.option_param = option_param
+
+    elif mealTime == "lunch":
+        tmp = entry.add("X-DH-LUNCH-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
         label = entry.add("X-DH-LUNCH-%s-LABEL" % option_param)
         label.value = LUNCH_LABEL
-    if mealTime == "dinner":
-        br = entry.add("X-DH-DINNER-"+ option_param)
-        br.option_param = option_param
+
+    elif mealTime == "dinner":
+        tmp = entry.add("X-DH-DINNER-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
         label = entry.add("X-DH-DINNER-%s-LABEL" % option_param)
         label.value = DINNER_LABEL
+
 
 def getMealTime(datevalue):
     """Gets the UTC date value from a string and returns the time in local format
