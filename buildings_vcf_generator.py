@@ -30,7 +30,7 @@ def getVcardSerialization(attrib):
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
-    
+
     entry = util.addCampus()
     try:
         vcard = entry.serialize()

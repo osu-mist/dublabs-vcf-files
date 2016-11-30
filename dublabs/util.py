@@ -68,8 +68,8 @@ def getVcard(attrib):
     return entry
 
 def fixVcardEscaping(vcardText):
-    """Fixes some escaping issues due to vobject library. 
-    
+    """Fixes some escaping issues due to vobject library.
+
     The ; and , shouldn't be escaped It modifies the vcard text.
     """
     vcardText = vcardText.replace('\;', ';')

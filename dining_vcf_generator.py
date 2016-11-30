@@ -1,3 +1,4 @@
+# --*-- coding: utf-8 --*--
 from datetime import datetime
 from operator import itemgetter
 from dublabs import api, util
@@ -8,9 +9,13 @@ import string
 import vobject
 import pytz
 import sys
+import re
 
 
 DEBUG = False
+BREAKFAST_LABEL = "Open hours"
+LUNCH_LABEL = "Open hours"
+DINNER_LABEL = "Open hours"
 
 def getVcardSerialization(attrib):
     """Returns a vcard object ready to be serialized
@@ -24,7 +29,9 @@ def getVcardSerialization(attrib):
         print attrib
 
     if "openHours" in attrib and attrib["openHours"] and attrib["type"] == "dining":
-        addFood(entry)
+        # addFood(entry, "breakfast")
+        # addFood(entry, "lunch")
+        # addFood(entry, "dinner")
         day_lookup = { '1': "MO", '2': "TU", '3': "WE", '4': "TH", '5': "FR", '6': "SA", '7':"SU" }
 
         timeLookup = { }
@@ -41,31 +48,39 @@ def getVcardSerialization(attrib):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
-        breakfast = ""
-        lunch = ""
-        dinner = ""
         openHourSuffix = ";;"
 
         if (DEBUG):
-            print timeLookup.items()
-            print orderedTimeLookup
+            print "【timeLookup.items】", timeLookup.items()
+            print "【orderedTimeLookup:】", orderedTimeLookup
 
-        if len(orderedTimeLookup) > 0:
-            breakfast = getMealDayTime(orderedTimeLookup, 0)
-
-        if len(orderedTimeLookup) > 1:
-            lunch = getMealDayTime(orderedTimeLookup, 1)
-
-        if len(orderedTimeLookup) > 2:
-            dinner = getMealDayTime(orderedTimeLookup, 2)
-
-        entry.x_dh_breakfast.value = breakfast + openHourSuffix
-        entry.x_dh_lunch.value = lunch + openHourSuffix
-        entry.x_dh_dinner.value = dinner + openHourSuffix
+        br_option, lunch_option, dinner_option = 1, 1, 1
+        for i, (openHour, _) in enumerate(orderedTimeLookup):
+            time = getStartTime(openHour)
+            value = getMealDayTime(orderedTimeLookup, i) + openHourSuffix
+            if time < 1030:
+                addFood(entry, "breakfast", value, str(br_option))
+                br_option += 1
+            elif time >= 1530:
+                addFood(entry, "dinner", value, str(dinner_option))
+                dinner_option += 1
+            else:
+                addFood(entry, "lunch", value, str(lunch_option))
+                lunch_option += 1
 
         addBuildingID(attrib, entry)
 
     return entry
+
+
+def getStartTime(openHour):
+    """
+    Return the starting time of the open hour
+    :type: String, e.g.'100000Z-220000Z'
+    :rtype: Int, e.g.1000
+    """
+    match = re.search(r'(?P<start>\d*)Z-\d*Z', openHour)
+    return int(match.group('start')) / 100
 
 
 def getMealDayTime(orderedTimeLookup, mealType):
@@ -100,33 +115,48 @@ def addBuildingID(attrib, entry):
     entry.x_d_bldg_id.value = parent_building_map[zone]
 
 
-def addFood(entry):
-    """Adds label, summary and url for breakfast, lunch and dinner
-
-    The entry passed in is modified. The values added are blank.
+def addFood(entry, mealTime, value="", option_param="1"):
     """
-    entry.add("X-DH-BREAKFAST")
-    entry.x_dh_breakfast.option_param = '1'
+    Adds label, option_param for breakfast/lunch/dinner
+    :type mealTime: String
+    :type option_param: Int
+    """
+    if mealTime == "breakfast":
+        tmp = entry.add("X-DH-BREAKFAST-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
+        label = entry.add("X-DH-BREAKFAST-%s-LABEL" % option_param)
+        label.value = BREAKFAST_LABEL
 
-    entry.add("X-DH-LUNCH")
-    entry.x_dh_lunch.option_param = '1'
+    elif mealTime == "lunch":
+        tmp = entry.add("X-DH-LUNCH-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
+        label = entry.add("X-DH-LUNCH-%s-LABEL" % option_param)
+        label.value = LUNCH_LABEL
 
-    entry.add("X-DH-DINNER")
-    entry.x_dh_dinner.option_param = '1'
+    elif mealTime == "dinner":
+        tmp = entry.add("X-DH-DINNER-" + option_param)
+        tmp.option_param = option_param
+        tmp.value = value
+        label = entry.add("X-DH-DINNER-%s-LABEL" % option_param)
+        label.value = DINNER_LABEL
+
 
 def getMealTime(datevalue):
     """Gets the UTC date value from a string and returns the time in local format
     """
     dateObject = datetime.strptime(datevalue, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=pytz.UTC)
 
-    tz = pytz.timezone('America/Los_Angeles') 
+    tz = pytz.timezone('America/Los_Angeles')
     localTime = tz.normalize(dateObject.astimezone(tz))
 
     return localTime.strftime('%H%M%SZ')
 
+
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
-    
+
     for x in response["data"]:
         # Skip on campus delivery
         if "Food 2 You" in x["attributes"]['name']:
@@ -140,6 +170,7 @@ def writeVcardFile(filename, response):
             vcard = entry.serialize()
 
         vcard = util.fixVcardEscaping(vcard)
+        vcard = re.sub(r"(BREAKFAST|LUNCH|DINNER)(-\d)", r"\1", vcard)
         vcfFile.write(vcard)
 
     vcfFile.close()
@@ -154,4 +185,5 @@ try:
     response = api.getLocationsData(config_data, params)
     writeVcardFile('dininglocations.vcf', response)
 except:
+    raise
     print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
