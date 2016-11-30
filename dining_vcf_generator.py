@@ -13,9 +13,9 @@ import re
 
 
 DEBUG = False
-BREAKFAST_LABEL = "OpenHour"
-LUNCH_LABEL = "OpenHour"
-DINNER_LABEL = "OpenHour"
+BREAKFAST_LABEL = "Open hours"
+LUNCH_LABEL = "Open hours"
+DINNER_LABEL = "Open hours"
 
 def getVcardSerialization(attrib):
     """Returns a vcard object ready to be serialized
@@ -170,7 +170,7 @@ def writeVcardFile(filename, response):
             vcard = entry.serialize()
 
         vcard = util.fixVcardEscaping(vcard)
-        vcard = re.sub(r"-\d", "", vcard)
+        vcard = re.sub(r"(BREAKFAST|LUNCH|DINNER)(-\d)", r"\1", vcard)
         vcfFile.write(vcard)
 
     vcfFile.close()
