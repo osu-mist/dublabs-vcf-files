@@ -1,0 +1,217 @@
+{
+        "default_descriptions": {
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "814114ac58ec81de7e308b275b461910": {
+            "name": "Ava's Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "6ca835c3c78947fe4c9d6609914eaefa": {
+            "name": "Bing's Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "cd192a6bffe2c43c9e3b25d3273f0a1a": {
+            "name": "Bites",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "359d0e9a0f5cb9341f85e8c6f515df03": {
+            "name": "Boardwalk Cafe",
+            "breakfast_description": "Serving breakfast & coffee until",
+            "lunch_description": "Serving stirfry, salads & entrees until", 
+            "dinner_description": "Serving stirfry, salads & entrees until"
+        },
+        "eaa160bbc56c06fc02c9c1a6ef008989": {
+            "name": "Calabaloo's",
+            "breakfast_description": "Serving burgers, sides & shakes until",
+            "lunch_description": "Serving burgers, sides & shakes until", 
+            "dinner_description": "Serving burgers, sides & shakes until"
+        },
+        "a3f010d866338c0875ddeeffd2b7f514": {
+            "name": "Calabaloo's",
+            "breakfast_description": "Serving burgers, sides & shakes until",
+            "lunch_description": "Serving burgers, sides & shakes until", 
+            "dinner_description": "Serving burgers, sides & shakes until"
+        },
+        "84c5519ab4fa7bd8a91b2d48fbfe69a1": {
+            "name": "Cascadia Deli",
+            "breakfast_description": "Serving sandwiches & hot meals until",
+            "lunch_description": "Serving sandwiches & hot meals until", 
+            "dinner_description": "Serving sandwiches & hot meals until"
+        },
+        "28c2127f0f21e111f4a1f0c2e3d9e6bc": {
+            "name": "Cascadia Market",
+            "breakfast_description": "Selling groceries, snacks & meals until",
+            "lunch_description": "Selling groceries, snacks & meals until", 
+            "dinner_description": "Selling groceries, snacks & meals until"
+        },
+        "7a67a51ddc6cc935b133e5f86582d78e": {
+            "name": "Clubhouse Deli",
+            "breakfast_description": "Serving soup, salad & sandwiches until",
+            "lunch_description": "Serving soup, salad & sandwiches until", 
+            "dinner_description": "Serving soup, salad & sandwiches until"
+        },
+        "e21edbc894bbf42d3dfa0fd9ce3c62ba": {
+            "name": "Cooper`s Creek BBQ",
+            "breakfast_description": "Serving grain bowls & BBQ meats until",
+            "lunch_description": "Serving grain bowls & BBQ meats until", 
+            "dinner_description": "Serving grain bowls & BBQ meats until"
+        },
+        "bb8961b47c18318d71963ae67fa85c85": {
+            "name": "Dixon Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "b3bb0f131190b65308172333b65b66bc": {
+            "name": "e.Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "962b732431766090c48539f460c919ec": {
+            "name": "EBGBs",
+            "breakfast_description": "Serving coffee, tea & snacks until",
+            "lunch_description": "Serving coffee, tea & snacks until", 
+            "dinner_description": "Serving coffee, tea & snacks until"
+        },
+        "4ad8e595a3de18fa9f6465516afa6e72": {
+            "name": "Five Four One",
+            "breakfast_description": "Serving organic NW cuisine until",
+            "lunch_description": "Serving organic NW cuisine until", 
+            "dinner_description": "Serving organic NW cuisine until"
+        },
+        "cb7f657e52d342f4ccdda393fda5bf0d": {
+            "name": "Global Fare",
+            "breakfast_description": "Serving breakfast & coffee until",
+            "lunch_description": "Serving globally-inspired entrees until", 
+            "dinner_description": "Serving globally-inspired entrees until"
+        },
+        "6f30f467d4ac17b54d793fcd013203fb": {
+            "name": "Grill",
+            "breakfast_description": "Serving burgers, sides & sandwiches until",
+            "lunch_description": "Serving burgers, sides & sandwiches until", 
+            "dinner_description": "Serving burgers, sides & sandwiches until"
+        },
+        "0da1b065ef522bc542fa2bc07efd2ad0": {
+            "name": "Java II",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "43a03057b7385a775ea19b1e3f2f4a51": {
+            "name": "JavaStop",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "966fba70f6ab92dc59d6473101ab9587": {
+            "name": "Joe's Burgers",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "53e9277c73bb21ecb7914ddcbba9e03d": {
+            "name": "La Calle",
+            "breakfast_description": "Serving Latin-inspired street food until",
+            "lunch_description": "Serving Latin-inspired street food until", 
+            "dinner_description": "Serving Latin-inspired street food until"
+        },
+        "a93a44da484dc6c5e4d5d423476a7dc9": {
+            "name": "Nori Grill",
+            "breakfast_description": "Serving fresh sushi & Asian meals until",
+            "lunch_description": "Serving fresh sushi & Asian meals until", 
+            "dinner_description": "Serving fresh sushi & Asian meals until"
+        },
+        "a61225aaf14de8f5ad14ae6cfc57653b": {
+            "name": "North Porch Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "2f0882ad0bd0c0bc8fb8e6fc4db586aa": {
+            "name": "Panda Express",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "ce54dd0b263b11c17cf3ae8c74302fa5": {
+            "name": "Pangea Cafe",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "a4eee3e954caf8c99be9596f644b574e": {
+            "name": "Peet`s Coffee",
+            "breakfast_description": "Serving coffee, tea & snacks until",
+            "lunch_description": "Serving coffee, tea & snacks until", 
+            "dinner_description": "Serving coffee, tea & snacks until"
+        },
+        "8905d4acafa96e7cec06887e7d51774c": {
+            "name": "RainTree Coffee",
+            "breakfast_description": "Serving coffee, tea & snacks until",
+            "lunch_description": "Serving coffee, tea & snacks until", 
+            "dinner_description": "Serving coffee, tea & snacks until"
+        },
+        "d4556ffc616dd7f7cb60d919f2dde128": {
+            "name": "Ring of Fire",
+            "breakfast_description": "Serving Asian/Pacific cuisine until",
+            "lunch_description": "Serving Asian/Pacific cuisine until", 
+            "dinner_description": "Serving Asian/Pacific cuisine until"
+        },
+        "1614df768ac11db3dbce39554f102d92": {
+            "name": "Serrano",
+            "breakfast_description": "Serving burritos & Mexican dishes until",
+            "lunch_description": "Serving burritos & Mexican dishes until", 
+            "dinner_description": "Serving burritos & Mexican dishes until"
+        },
+        "4fd67e1cd640fff0e245c3d38855fd20": {
+            "name": "Southside Station Deli",
+            "breakfast_description": "Serving soup, salad & sandwiches until",
+            "lunch_description": "Serving soup, salad & sandwiches until", 
+            "dinner_description": "Serving soup, salad & sandwiches until"
+        },
+        "787acb8694a4d4f039b1f7095ad59072": {
+            "name": "Southside Station Pizzeria",
+            "breakfast_description": "Serving specialty pizzas until",
+            "lunch_description": "Serving specialty pizzas until", 
+            "dinner_description": "Serving specialty pizzas until"
+        },
+        "d3c6cb0ffeb902d0fb5d367845c4e056": {
+            "name": "The Dam",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "c013c5c22754e81d79a4162b387cd422": {
+            "name": "The Main Squeeze",
+            "breakfast_description": "Serving smoothies & snacks until",
+            "lunch_description": "Serving smoothies & snacks until", 
+            "dinner_description": "Serving smoothies & snacks until"
+        },
+        "68b495b673f15332d6558773a41c70ed": {
+            "name": "TOGO's",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        },
+        "8e75f1239ea156cbdb3ff5885b06cc98": {
+            "name": "Tomassito's Italian Cafe",
+            "breakfast_description": "Serving pasta, pizza & salad until",
+            "lunch_description": "Serving pasta, pizza & salad until", 
+            "dinner_description": "Serving pasta, pizza & salad until"
+        },
+        "935d84996ac29e8942f06ac6a6a26637": {
+            "name": "Trader Bing's",
+            "breakfast_description": "Open until",
+            "lunch_description": "Open until", 
+            "dinner_description": "Open until"
+        }
+}
