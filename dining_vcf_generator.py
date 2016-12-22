@@ -146,7 +146,6 @@ def addFood(entry, mealTime, meal_desc, value="", option_param="1"):
         tmp = entry.add("X-DH-DINNER-" + option_param)
         tmp.option_param = option_param
         tmp.value = value
-        tmp
         label = entry.add("X-DH-DINNER-%s-LABEL" % option_param)
         label.value = DINNER_LABEL
         summary = entry.add("X-DH-DINNER-SUMMARY")
