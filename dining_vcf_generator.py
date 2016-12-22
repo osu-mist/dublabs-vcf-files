@@ -59,12 +59,15 @@ def getVcardSerialization(attrib, meal_desc):
             time = getStartTime(openHour)
             value = getMealDayTime(orderedTimeLookup, i) + openHourSuffix
             if time < 1030:
+                value = value + meal_desc["breakfast_description"] + ";"
                 addFood(entry, "breakfast", meal_desc, value, str(br_option))
                 br_option += 1
             elif time >= 1530:
+                value = value + meal_desc["dinner_description"] + ";"
                 addFood(entry, "dinner", meal_desc, value, str(dinner_option))
                 dinner_option += 1
             else:
+                value = value + meal_desc["lunch_description"] + ";"
                 addFood(entry, "lunch", meal_desc, value, str(lunch_option))
                 lunch_option += 1
 
@@ -143,6 +146,7 @@ def addFood(entry, mealTime, meal_desc, value="", option_param="1"):
         tmp = entry.add("X-DH-DINNER-" + option_param)
         tmp.option_param = option_param
         tmp.value = value
+        tmp
         label = entry.add("X-DH-DINNER-%s-LABEL" % option_param)
         label.value = DINNER_LABEL
         summary = entry.add("X-DH-DINNER-SUMMARY")
