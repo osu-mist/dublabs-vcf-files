@@ -48,7 +48,7 @@ def getVcardSerialization(attrib, meal_desc):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
-        openHourSuffix = ";;"
+        openHourSuffix = ";"
 
         if (DEBUG):
             print "【timeLookup.items】", timeLookup.items()
