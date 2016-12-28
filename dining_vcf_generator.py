@@ -17,7 +17,7 @@ BREAKFAST_LABEL = "Open hours"
 LUNCH_LABEL = "Open hours"
 DINNER_LABEL = "Open hours"
 
-def getVcardSerialization(attrib):
+def getVcardSerialization(attrib, meal_desc):
     """Returns a vcard object ready to be serialized
 
     vcard object is populated with needed parameters from attrib data
@@ -48,7 +48,7 @@ def getVcardSerialization(attrib):
 
         orderedTimeLookup = sorted(timeLookup.items(), key=lambda tup: tup[0])
 
-        openHourSuffix = ";;"
+        openHourSuffix = ";"
 
         if (DEBUG):
             print "【timeLookup.items】", timeLookup.items()
@@ -59,13 +59,16 @@ def getVcardSerialization(attrib):
             time = getStartTime(openHour)
             value = getMealDayTime(orderedTimeLookup, i) + openHourSuffix
             if time < 1030:
-                addFood(entry, "breakfast", value, str(br_option))
+                value = value + meal_desc["breakfast_description"] + ";"
+                addFood(entry, "breakfast", meal_desc, value, str(br_option))
                 br_option += 1
             elif time >= 1530:
-                addFood(entry, "dinner", value, str(dinner_option))
+                value = value + meal_desc["dinner_description"] + ";"
+                addFood(entry, "dinner", meal_desc, value, str(dinner_option))
                 dinner_option += 1
             else:
-                addFood(entry, "lunch", value, str(lunch_option))
+                value = value + meal_desc["lunch_description"] + ";"
+                addFood(entry, "lunch", meal_desc, value, str(lunch_option))
                 lunch_option += 1
 
         addBuildingID(attrib, entry)
@@ -115,7 +118,7 @@ def addBuildingID(attrib, entry):
     entry.x_d_bldg_id.value = parent_building_map[zone]
 
 
-def addFood(entry, mealTime, value="", option_param="1"):
+def addFood(entry, mealTime, meal_desc, value="", option_param="1"):
     """
     Adds label, option_param for breakfast/lunch/dinner
     :type mealTime: String
@@ -127,6 +130,8 @@ def addFood(entry, mealTime, value="", option_param="1"):
         tmp.value = value
         label = entry.add("X-DH-BREAKFAST-%s-LABEL" % option_param)
         label.value = BREAKFAST_LABEL
+        summary = entry.add("X-DH-BREAKFAST-SUMMARY")
+        summary.value = meal_desc["breakfast_description"]
 
     elif mealTime == "lunch":
         tmp = entry.add("X-DH-LUNCH-" + option_param)
@@ -134,6 +139,8 @@ def addFood(entry, mealTime, value="", option_param="1"):
         tmp.value = value
         label = entry.add("X-DH-LUNCH-%s-LABEL" % option_param)
         label.value = LUNCH_LABEL
+        summary = entry.add("X-DH-LUNCH-SUMMARY")
+        summary.value = meal_desc["lunch_description"]
 
     elif mealTime == "dinner":
         tmp = entry.add("X-DH-DINNER-" + option_param)
@@ -141,7 +148,8 @@ def addFood(entry, mealTime, value="", option_param="1"):
         tmp.value = value
         label = entry.add("X-DH-DINNER-%s-LABEL" % option_param)
         label.value = DINNER_LABEL
-
+        summary = entry.add("X-DH-DINNER-SUMMARY")
+        summary.value = meal_desc["dinner_description"]
 
 def getMealTime(datevalue):
     """Gets the UTC date value from a string and returns the time in local format
@@ -156,13 +164,20 @@ def getMealTime(datevalue):
 
 def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
+    meal_descs_json = open('osu-corvallis-food-locations.json')
+    meal_descs = json.load(meal_descs_json)
 
     for x in response["data"]:
         # Skip on campus delivery
         if "Food 2 You" in x["attributes"]['name']:
             continue
 
-        entry = getVcardSerialization(x["attributes"])
+        try:
+            meal_desc = meal_descs[x["id"]]
+        except KeyError:
+            meal_desc = meal_descs["default_descriptions"]
+
+        entry = getVcardSerialization(x["attributes"], meal_desc)
 
         try:
             vcard = entry.serialize()
