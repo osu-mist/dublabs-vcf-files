@@ -1,9 +1,6 @@
 from dublabs import api, util
 
 import json
-import StringIO
-import string
-import vobject
 import sys
 
 def getVcardSerialization(attrib):

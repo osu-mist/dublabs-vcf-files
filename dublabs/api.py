@@ -1,7 +1,3 @@
-from HTMLParser import HTMLParser
-from datetime import datetime
-from operator import itemgetter
-
 import json
 import pycurl
 import urllib
