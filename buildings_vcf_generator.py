@@ -29,21 +29,12 @@ def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
 
     entry = util.addCampus()
-    try:
-        vcard = entry.serialize()
-    except:
-        vcard = entry.serialize()
-
+    vcard = entry.serialize()
     vcfFile.write(vcard)
 
     for x in response["data"]:
         entry = getVcardSerialization(x["attributes"])
-
-        try:
-            vcard = entry.serialize()
-        except:
-            vcard = entry.serialize()
-
+        vcard = entry.serialize()
         vcard = util.fixVcardEscaping(vcard)
         vcfFile.write(vcard)
 

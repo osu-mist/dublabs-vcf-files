@@ -174,12 +174,7 @@ def writeVcardFile(filename, response):
             meal_desc = meal_descs["default_descriptions"]
 
         entry = getVcardSerialization(x["attributes"], meal_desc)
-
-        try:
-            vcard = entry.serialize()
-        except:
-            vcard = entry.serialize()
-
+        vcard = entry.serialize()
         vcard = util.fixVcardEscaping(vcard)
         vcard = re.sub(r"(BREAKFAST|LUNCH|DINNER)(-\d)", r"\1", vcard)
         vcfFile.write(vcard)
