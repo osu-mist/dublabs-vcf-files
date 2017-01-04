@@ -186,15 +186,17 @@ def writeVcardFile(filename, response):
 
     vcfFile.close()
 
+if __name__ == '__main__':
+    try:
+        config_data_file = open(sys.argv[1])
+    except IndexError:
+        print "Usage: python dining_vcf_generator.py configuration.json"
+        print "Please place the configuration file in the same directory and pass it as an argument!"
+        sys.exit(2)
 
-try:
     # Read configuration file in JSON format
-    config_data_file = open(sys.argv[1])
     config_data  = json.load(config_data_file)
-    params = {"type": "dining", "page[size]": 200}
     # Process Dining Data
+    params = {"type": "dining", "page[size]": 200}
     response = api.getLocationsData(config_data, params)
     writeVcardFile('dininglocations.vcf', response)
-except:
-    raise
-    print "Please make sure placing the configuration file in the same directory and pass it as an argument!"

@@ -49,12 +49,17 @@ def writeVcardFile(filename, response):
 
     vcfFile.close()
 
-try:
+if __name__ == '__main__':
+    try:
+        config_data_file = open(sys.argv[1])
+    except IndexError:
+        print "Usage: python buildings_vcf_generator.py configuration.json"
+        print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
+        sys.exit(2)
+
     # Read configuration file in JSON format
-    config_data_file = open(sys.argv[1])
     config_data = json.load(config_data_file)
+    # Process Building Data
     params = {"type": "building", "page[size]": 200, "campus": "corvallis"}
     response = api.getLocationsData(config_data, params)
     writeVcardFile('buildings.vcf', response)
-except:
-    print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
