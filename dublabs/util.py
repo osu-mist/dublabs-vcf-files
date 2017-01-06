@@ -26,6 +26,7 @@ def addCampus():
     entry = vobject.vCard()
     entry.add('n')
     entry.n.value = CAMPUS
+    entry.n.isNative = False
 
     entry.add('fn')
     entry.fn.value = CAMPUS
@@ -45,6 +46,7 @@ def getVcard(attrib):
 
     entry.add('n')
     entry.n.value = attrib["name"]
+    entry.n.isNative = False
 
     entry.add('fn')
     entry.fn.value = attrib["name"]

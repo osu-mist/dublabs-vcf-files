@@ -1,9 +1,6 @@
 from dublabs import api, util
 
 import json
-import StringIO
-import string
-import vobject
 import sys
 
 def getVcardSerialization(attrib):
@@ -32,32 +29,28 @@ def writeVcardFile(filename, response):
     vcfFile = open(filename,'w')
 
     entry = util.addCampus()
-    try:
-        vcard = entry.serialize()
-    except:
-        vcard = entry.serialize()
-
+    vcard = entry.serialize()
     vcfFile.write(vcard)
 
     for x in response["data"]:
         entry = getVcardSerialization(x["attributes"])
-
-        try:
-            vcard = entry.serialize()
-        except:
-            vcard = entry.serialize()
-
+        vcard = entry.serialize()
         vcard = util.fixVcardEscaping(vcard)
         vcfFile.write(vcard)
 
     vcfFile.close()
 
-try:
+if __name__ == '__main__':
+    try:
+        config_data_file = open(sys.argv[1])
+    except IndexError:
+        print "Usage: python buildings_vcf_generator.py configuration.json"
+        print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
+        sys.exit(2)
+
     # Read configuration file in JSON format
-    config_data_file = open(sys.argv[1])
     config_data = json.load(config_data_file)
+    # Process Building Data
     params = {"type": "building", "page[size]": 200, "campus": "corvallis"}
     response = api.getLocationsData(config_data, params)
     writeVcardFile('buildings.vcf', response)
-except:
-    print "Please make sure placing the configuration file in the same directory and pass it as an argument!"
