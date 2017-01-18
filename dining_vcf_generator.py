@@ -50,7 +50,7 @@ def getVcardSerialization(attrib, meal_desc):
         br_option, lunch_option, dinner_option = 1, 1, 1
         for openHour, days in orderedTimeLookup:
             startTime, endTime = openHour
-            value = getMealDayTime(openHour, days) + ";"
+            value = getMealDayTime(openHour, days) + ";;"
             if startTime < '103000Z':
                 addFood(entry, "breakfast", meal_desc, value, str(br_option))
                 br_option += 1
