@@ -46,7 +46,7 @@ def getLocations(url, access_token, params):
 
 def getLocationsData(config_data, params):
     base_url         = config_data["hostname"] + config_data["version"] + config_data["api"]
-    access_token_url = base_url + config_data["token_endpoint"]
+    access_token_url = config_data["token_api"]
 
     access_token_response = getAccessToken(access_token_url, config_data["client_id"], config_data["client_secret"]);
 
