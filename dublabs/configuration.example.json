@@ -4,9 +4,9 @@
 
 	"api": "/locations",
 
-	"token_endpoint": "/token",
 	"locations_endpoint": "/",
 
+    "token_api": "https://api.oregonstate.edu/oauth2/token",
 	"client_id": "secret",
 	"client_secret": "sauce",
 
