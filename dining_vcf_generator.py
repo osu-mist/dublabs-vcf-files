@@ -94,6 +94,7 @@ def addBuildingID(attrib, entry):
         'The Learning Innovation Center': 'LINC',
         'Valley Library': 'VLIB',
         'Weatherford Hall': 'WFD',
+        'Magruder Hall': 'Magr'
     }
     entry.x_d_bldg_id.value = parent_building_map[zone]
 
